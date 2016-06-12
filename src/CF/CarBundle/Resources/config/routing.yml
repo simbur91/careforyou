@@ -1,0 +1,3 @@
+cf_car_homepage:
+    path:     /
+    defaults: { _controller: CFCarBundle:Default:index }

@@ -1,0 +1,111 @@
+cf_car_users:
+    resource: "@CFCarBundle/Controller/UsersController.php"
+    type:     annotation
+
+cf_car_travel:
+    resource: "@CFCarBundle/Controller/TravelController.php"
+    type:     annotation
+
+cf_car_sponsors:
+    resource: "@CFCarBundle/Controller/SponsorsController.php"
+    type:     annotation
+
+cf_car_preferences:
+    resource: "@CFCarBundle/Controller/PreferencesController.php"
+    type:     annotation
+
+cf_car_modele:
+    resource: "@CFCarBundle/Controller/ModeleController.php"
+    type:     annotation
+
+cf_car_message:
+    resource: "@CFCarBundle/Controller/MessageController.php"
+    type:     annotation
+
+cf_car_marque:
+    resource: "@CFCarBundle/Controller/MarqueController.php"
+    type:     annotation
+
+cf_car_info.banq:
+    resource: "@CFCarBundle/Controller/Info_BanqController.php"
+    type:     annotation
+
+cf_car_driver:
+    resource: "@CFCarBundle/Controller/DriverController.php"
+    type:     annotation
+
+cf_car_coordonnees:
+    resource: "@CFCarBundle/Controller/CoordonneesController.php"
+    type:     annotation
+
+cf_car_competition:
+    resource: "@CFCarBundle/Controller/CompetitionController.php"
+    type:     annotation
+
+cf_car_comments:
+    resource: "@CFCarBundle/Controller/CommentsController.php"
+    type:     annotation
+
+cf_car_commande:
+    resource: "@CFCarBundle/Controller/CommandeController.php"
+    type:     annotation
+
+cf_car_advice:
+    resource: "@CFCarBundle/Controller/AdviceController.php"
+    type:     annotation
+
+cf_car_travel:
+    resource: "@CFCarBundle/Controller/TravelController.php"
+    type:     annotation
+
+cf_car_sponsors:
+    resource: "@CFCarBundle/Controller/SponsorsController.php"
+    type:     annotation
+
+cf_car_preferences:
+    resource: "@CFCarBundle/Controller/PreferencesController.php"
+    type:     annotation
+
+cf_car_modele:
+    resource: "@CFCarBundle/Controller/ModeleController.php"
+    type:     annotation
+
+cf_car_message:
+    resource: "@CFCarBundle/Controller/MessageController.php"
+    type:     annotation
+
+cf_car_marque:
+    resource: "@CFCarBundle/Controller/MarqueController.php"
+    type:     annotation
+
+cf_car_info_banq:
+    resource: "@CFCarBundle/Controller/InfoBanqController.php"
+    type:     annotation
+
+cf_car_competition:
+    resource: "@CFCarBundle/Controller/CompetitionController.php"
+    type:     annotation
+
+cf_car_comments:
+    resource: "@CFCarBundle/Controller/CommentsController.php"
+    type:     annotation
+
+cf_car_commande:
+    resource: "@CFCarBundle/Controller/CommandeController.php"
+    type:     annotation
+
+cf_car_advice:
+    resource: "@CFCarBundle/Controller/AdviceController.php"
+    type:     annotation
+
+cf_car_driver:
+    resource: "@CFCarBundle/Controller/DriverController.php"
+    type:     annotation
+
+cf_car:
+    resource: "@CFCarBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

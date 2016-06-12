@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Preferences</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ preference.id }}</td>
+            </tr>
+            <tr>
+                <th>Users</th>
+                <td>{{ preference.Users }}</td>
+            </tr>
+            <tr>
+                <th>Animal</th>
+                <td>{% if preference.animal %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Smoker</th>
+                <td>{% if preference.smoker %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Talker</th>
+                <td>{% if preference.talker %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Musique</th>
+                <td>{{ preference.musique }}</td>
+            </tr>
+            <tr>
+                <th>Food</th>
+                <td>{% if preference.food %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Rayon</th>
+                <td>{{ preference.rayon }}</td>
+            </tr>
+            <tr>
+                <th>Horairealler</th>
+                <td>{% if preference.horaireAller %}{{ preference.horaireAller|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Horaireretour</th>
+                <td>{% if preference.horaireRetour %}{{ preference.horaireRetour|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Confort</th>
+                <td>{{ preference.confort }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('preferences_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('preferences_edit', { 'id': preference.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

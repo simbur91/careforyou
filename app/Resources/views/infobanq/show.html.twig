@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>InfoBanq</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Iban</th>
+                <td>{{ infoBanq.iban }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ infoBanq.statut }}</td>
+            </tr>
+            <tr>
+                <th>Bic</th>
+                <td>{{ infoBanq.bic }}</td>
+            </tr>
+            <tr>
+                <th>Institution</th>
+                <td>{{ infoBanq.institution }}</td>
+            </tr>
+            <tr>
+                <th>Idpayment</th>
+                <td>{{ infoBanq.idPayment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('infobanq_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('infobanq_edit', { 'id': infoBanq.idPayment }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

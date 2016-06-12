@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Preferences list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Users</th>
+                <th>Animal</th>
+                <th>Smoker</th>
+                <th>Talker</th>
+                <th>Musique</th>
+                <th>Food</th>
+                <th>Rayon</th>
+                <th>Horairealler</th>
+                <th>Horaireretour</th>
+                <th>Confort</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for preference in preferences %}
+            <tr>
+                <td><a href="{{ path('preferences_show', { 'id': preference.id }) }}">{{ preference.id }}</a></td>
+                <td>{{ preference.Users }}</td>
+                <td>{% if preference.animal %}Yes{% else %}No{% endif %}</td>
+                <td>{% if preference.smoker %}Yes{% else %}No{% endif %}</td>
+                <td>{% if preference.talker %}Yes{% else %}No{% endif %}</td>
+                <td>{{ preference.musique }}</td>
+                <td>{% if preference.food %}Yes{% else %}No{% endif %}</td>
+                <td>{{ preference.rayon }}</td>
+                <td>{% if preference.horaireAller %}{{ preference.horaireAller|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if preference.horaireRetour %}{{ preference.horaireRetour|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ preference.confort }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('preferences_show', { 'id': preference.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('preferences_edit', { 'id': preference.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('preferences_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>InfoBanq list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Iban</th>
+                <th>Statut</th>
+                <th>Bic</th>
+                <th>Institution</th>
+                <th>Idpayment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for infoBanq in infoBanqs %}
+            <tr>
+                <td><a href="{{ path('infobanq_show', { 'id': infoBanq.idPayment }) }}">{{ infoBanq.iban }}</a></td>
+                <td>{{ infoBanq.statut }}</td>
+                <td>{{ infoBanq.bic }}</td>
+                <td>{{ infoBanq.institution }}</td>
+                <td>{{ infoBanq.idPayment }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('infobanq_show', { 'id': infoBanq.idPayment }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('infobanq_edit', { 'id': infoBanq.idPayment }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('infobanq_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

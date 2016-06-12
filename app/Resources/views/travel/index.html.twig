@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Travel list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Driverid</th>
+                <th>Citydeparture</th>
+                <th>Cityfinish</th>
+                <th>Placefree</th>
+                <th>Price</th>
+                <th>Distance</th>
+                <th>Itinary</th>
+                <th>Usersid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for travel in travels %}
+            <tr>
+                <td><a href="{{ path('travel_show', { 'id': travel.id }) }}">{{ travel.id }}</a></td>
+                <td>{{ travel.driverId }}</td>
+                <td>{{ travel.cityDeparture }}</td>
+                <td>{{ travel.cityFinish }}</td>
+                <td>{{ travel.placeFree }}</td>
+                <td>{{ travel.price }}</td>
+                <td>{{ travel.distance }}</td>
+                <td>{{ travel.itinary }}</td>
+                <td>{{ travel.usersId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('travel_show', { 'id': travel.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('travel_edit', { 'id': travel.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('travel_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

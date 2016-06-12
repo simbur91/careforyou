@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Driver</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ driver.id }}</td>
+            </tr>
+            <tr>
+                <th>Place</th>
+                <td>{{ driver.place }}</td>
+            </tr>
+            <tr>
+                <th>Modeleid</th>
+                <td>{{ driver.modeleId }}</td>
+            </tr>
+            <tr>
+                <th>Userid</th>
+                <td>{{ driver.UserId }}</td>
+            </tr>
+            <tr>
+                <th>Idmarque</th>
+                <td>{{ driver.IdMarque }}</td>
+            </tr>
+            <tr>
+                <th>Rayon</th>
+                <td>{{ driver.rayon }}</td>
+            </tr>
+            <tr>
+                <th>Colorcar</th>
+                <td>{{ driver.colorCar }}</td>
+            </tr>
+            <tr>
+                <th>Notemoyenne</th>
+                <td>{{ driver.noteMoyenne }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('driver_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('driver_edit', { 'id': driver.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

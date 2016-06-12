@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Travel</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ travel.id }}</td>
+            </tr>
+            <tr>
+                <th>Driverid</th>
+                <td>{{ travel.driverId }}</td>
+            </tr>
+            <tr>
+                <th>Citydeparture</th>
+                <td>{{ travel.cityDeparture }}</td>
+            </tr>
+            <tr>
+                <th>Cityfinish</th>
+                <td>{{ travel.cityFinish }}</td>
+            </tr>
+            <tr>
+                <th>Placefree</th>
+                <td>{{ travel.placeFree }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ travel.price }}</td>
+            </tr>
+            <tr>
+                <th>Distance</th>
+                <td>{{ travel.distance }}</td>
+            </tr>
+            <tr>
+                <th>Itinary</th>
+                <td>{{ travel.itinary }}</td>
+            </tr>
+            <tr>
+                <th>Usersid</th>
+                <td>{{ travel.usersId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('travel_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('travel_edit', { 'id': travel.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

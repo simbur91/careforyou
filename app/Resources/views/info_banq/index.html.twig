@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Info_Banq list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Iban</th>
+                <th>Statut</th>
+                <th>Bic</th>
+                <th>Institution</th>
+                <th>Userid</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for info_Banq in info_Banqs %}
+            <tr>
+                <td><a href="{{ path('info_banq_show', { 'id': info_Banq.id }) }}">{{ info_Banq.id }}</a></td>
+                <td>{{ info_Banq.iban }}</td>
+                <td>{{ info_Banq.statut }}</td>
+                <td>{{ info_Banq.bic }}</td>
+                <td>{{ info_Banq.institution }}</td>
+                <td>{{ info_Banq.userId }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('info_banq_show', { 'id': info_Banq.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('info_banq_edit', { 'id': info_Banq.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('info_banq_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
