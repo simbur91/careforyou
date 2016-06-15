@@ -78,10 +78,6 @@ cf_car_marque:
     resource: "@CFCarBundle/Controller/MarqueController.php"
     type:     annotation
 
-cf_car_info_banq:
-    resource: "@CFCarBundle/Controller/InfoBanqController.php"
-    type:     annotation
-
 cf_car_competition:
     resource: "@CFCarBundle/Controller/CompetitionController.php"
     type:     annotation

@@ -571,11 +571,11 @@ class Users
     /**
      * Add commande
      *
-     * @param \CF\CarBundle\Entity\Commeande $commande
+     * @param \CF\CarBundle\Entity\Commande $commande
      *
      * @return Users
      */
-    public function addCommande(\CF\CarBundle\Entity\Commeande $commande)
+    public function addCommande(\CF\CarBundle\Entity\Commande $commande)
     {
         $this->commande[] = $commande;
 
@@ -585,9 +585,9 @@ class Users
     /**
      * Remove commande
      *
-     * @param \CF\CarBundle\Entity\Commeande $commande
+     * @param \CF\CarBundle\Entity\Commande $commande
      */
-    public function removeCommande(\CF\CarBundle\Entity\Commeande $commande)
+    public function removeCommande(\CF\CarBundle\Entity\Commande $commande)
     {
         $this->commande->removeElement($commande);
     }
