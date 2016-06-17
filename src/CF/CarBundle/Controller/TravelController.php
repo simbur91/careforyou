@@ -19,7 +19,7 @@ class TravelController extends Controller
     /**
      * Lists all Travel entities.
      *
-     * @Route("/", name="travel_index")
+     * @Route("/", name="cf_car_travel")
      * @Method("GET")
      */
     public function indexAction()
@@ -42,12 +42,12 @@ class TravelController extends Controller
     public function newAction(Request $request)
     {
         $travel = new Travel();
-        $form = $this->createForm('CF\CarBundle\Form\TravelType', $travel);
+        $form = $this->createForm('CF\CarBundle\Form\TravelType');
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($travel);
+          $em = $this->getDoctrine()->getManager();
+          $em->persist($travel);
             $em->flush();
 
             return $this->redirectToRoute('travel_show', array('id' => $travel->getId()));

@@ -2,6 +2,3 @@ cf_car_homepage:
     path:     /
     defaults: { _controller: CFCarBundle:Default:index }
 
-cf_car_travel:
-    path:     /travel
-    defaults: { _controller: CFCarBundle:Travel:index }

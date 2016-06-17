@@ -2,6 +2,7 @@
 
 namespace CF\CarBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -79,8 +80,7 @@ class Travel
     private $usersId;
     /**
 
-     * @ORM\OneToMany(targetEntity="Comments",mappedBy="travel")
-
+     * @ORM\OneToMany(targetEntity="Comments", mappedBy="travel")
      */
     private $comments;
 
@@ -90,6 +90,12 @@ class Travel
 
      */
     private $commande;
+
+    public function __construct()
+    {
+        $this->usersId = new ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -324,7 +330,7 @@ class Travel
      *
      * @return Travel
      */
-    public function setUsers(\CF\CarBundle\Entity\Users $users = null)
+    public function setUsers(Users $users = null)
     {
         $this->users = $users;
 
@@ -348,7 +354,7 @@ class Travel
      *
      * @return Travel
      */
-    public function setIdDriver(\CF\CarBundle\Entity\Driver $idDriver = null)
+    public function setIdDriver(Driver $idDriver = null)
     {
         $this->idDriver = $idDriver;
 
@@ -364,9 +370,29 @@ class Travel
     {
         return $this->idDriver;
     }
-    public function __construct()
+
+    /**
+     * Set commande
+     *
+     * @param \CF\CarBundle\Entity\Commande $commande
+     *
+     * @return Travel
+     */
+    public function setCommande(Commande $commande = null)
     {
-        $this->usersId = new ArrayCollection();
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \CF\CarBundle\Entity\Commande
+     */
+    public function getCommande()
+    {
+        return $this->commande;
     }
 
     /**
@@ -401,29 +427,5 @@ class Travel
     public function getComments()
     {
         return $this->comments;
-    }
-
-    /**
-     * Set commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     *
-     * @return Travel
-     */
-    public function setCommande(\CF\CarBundle\Entity\Commande $commande = null)
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Get commande
-     *
-     * @return \CF\CarBundle\Entity\Commande
-     */
-    public function getCommande()
-    {
-        return $this->commande;
     }
 }

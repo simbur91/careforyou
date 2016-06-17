@@ -3,11 +3,38 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" />
+            <link rel='stylesheet' href="{{ asset('/css/style.css') }}">
+
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <main class="container">
+        <header>
+            {{ knp_menu_render('CFCarBundle:Builder:mainMenu') }}
+            <section class="banner">
+                <img src="{{asset('images/banner.png')}}"/>
+            </section>
+
+            <h1>ar for You</h1>
+            <aside>
+                <ul class="social-link">
+                    <li><a href="#"><img src="{{asset('images/facebook.png')}}"/></a></li>
+                    <li><a href="#"><img src="{{asset('images/twitter.png')}}"/></a></li>
+                    <li><a href="#"><img src="{{asset('images/instagram.png')}}"/></a></li>
+                    <li><a href="#"><img src="{{asset('images/google-plus.png')}}"/></a></li>
+                </ul>
+                <form>
+                    <input type="search" name="search">
+                    <input type="submit" value="rechercher">
+                </form>
+            </aside>
+        </header>
+        {% block section %}{% endblock %}
         {% block javascripts %}{% endblock %}
+    </main>
     </body>
 </html>
+

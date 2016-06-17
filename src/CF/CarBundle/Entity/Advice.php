@@ -22,7 +22,7 @@ class Advice
     private $idAdvice;
 
     /**
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Users")
      * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * @ORM\Column(name="id_user", type="integer")
@@ -30,7 +30,7 @@ class Advice
     private $idUser;
 
     /**
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Driver")
      * @ORM\JoinColumn(name="id_driver", referencedColumnName="id")
      * @ORM\Column(name="id_driver", type="integer")

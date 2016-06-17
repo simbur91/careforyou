@@ -30,10 +30,8 @@ class Comments
     private $user;
 
     /**
-     * @var int
      * @ORM\ManyToOne(targetEntity="Travel",inversedBy="comments")
      * @ORM\JoinColumn(name="id_trajet", referencedColumnName="id")
-     * @ORM\Column(name="id_travel", type="integer")
      */
     private $travel;
 
