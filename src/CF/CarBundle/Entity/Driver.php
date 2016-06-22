@@ -38,11 +38,11 @@ class Driver
     private $modeleId;
 
     /**
-     * @var int
      *
+     * @var int
      * @ORM\OneToOne(targetEntity="Users")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     * @ORM\Column(name="user_id", type="integer")
+     *
      */
 
 
@@ -85,11 +85,9 @@ class Driver
     private $noteMoyenne;
 
     /**
-     * @var int
      *
-     * @ORM\Column(name="preferences_id", type="integer")
-     * @ORM\OneToOne(targetEntity="Preferences")
-     * @ORM\JoinColumn(name="preferences_id", referencedColumnName="id")
+     * @ORM\OneToOne(targetEntity="Preferences",inversedBy="driver")
+     *
      */
     private $preferencesId;
     /**

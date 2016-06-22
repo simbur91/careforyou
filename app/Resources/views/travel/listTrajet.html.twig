@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block section %}
+{% for trajet in trajets %}
+   <table>
+       <tr>
+
+           <td>{{ trajet.Iddriver }}</td>
+           <td>{{ trajet.cityDeparture }}</td>
+           <td>{{ trajet.cityFinish }}</td>
+           <td>{{ trajet.placeFree }}</td>
+           <td>{{ trajet.price }}</td>
+           <td>{{ trajet.distance }}</td>
+           <td>{{ trajet.itinary }}</td>
+           <td>{{ trajet.usersId }}</td>
+           <td>{{ trajet.rayon }}</td>
+
+       </tr>
+   </table>
+
+{% endfor %}
+{% endblock %}

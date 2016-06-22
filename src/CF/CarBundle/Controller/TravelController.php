@@ -32,6 +32,20 @@ class TravelController extends Controller
             'travels' => $travels,
         ));
     }
+    /**
+     * Lists all travel
+     *
+     * @Route("/all", name="cf_car_alltravel")
+     * @Method("GET")
+     */
+    public function TrajetAction()
+    {
+
+        return $this->render('travel/listTrajet.html.twig', array(
+            'trajets' =>$this->getDoctrine() ->getManager()->getRepository('CFCarBundle:Travel')->AllTravelByPrefAndDriver(),
+
+        ));
+    }
 
     /**
      * Creates a new Travel entity.
@@ -137,5 +151,7 @@ class TravelController extends Controller
             ->getForm()
         ;
     }
+
+
 
 }

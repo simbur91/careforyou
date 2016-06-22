@@ -23,10 +23,10 @@ class Travel
     private $id;
 
     /**
-     * @var int
-     * @ORM\ManyToOne(targetEntity="Driver")
+     *
+     * @ORM\ManyToOne(targetEntity="Driver",inversedBy="travel")
      * @ORM\JoinColumn(name="driver_id", referencedColumnName="id")
-     * @ORM\Column(name="driver_id", type="integer")
+     *
      */
     private $driverId;
 
@@ -402,7 +402,7 @@ class Travel
      *
      * @return Travel
      */
-    public function addComment(\CF\CarBundle\Entity\Comments $comment)
+    public function addComment(Comments $comment)
     {
         $this->comments[] = $comment;
 
@@ -414,7 +414,7 @@ class Travel
      *
      * @param \CF\CarBundle\Entity\Comments $comment
      */
-    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
+    public function removeComment(Comments $comment)
     {
         $this->comments->removeElement($comment);
     }

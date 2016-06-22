@@ -12,10 +12,14 @@ class TravelRepository extends \Doctrine\ORM\EntityRepository
 {
     public function AllTravelByPrefAndDriver(){
 
-        $query = $this->getEntityManager()
-            ->createQuery(
-                'SELECT ,  FROM CFCarBundle:Travel t
-            JOIN p.category c
-            WHERE p.id = :id'
+        $qb=$this->createQueryBuilder('t')
+            ->join('t.driverId','driver')
+            ->leftJoin('driver.preferencesId','p')
+            ->join('driver.UserId','user')
+            ->addSelect('driver')
+            ->addSelect('p')
+            ->addSelect('user');
+
+        return $qb->getQuery()->getResult();
     }
 }
