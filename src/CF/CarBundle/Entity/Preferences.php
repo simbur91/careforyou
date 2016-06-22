@@ -23,10 +23,10 @@ class Preferences
 
     /**
      * @var int
-     * @ORM\OneToMany(targetEntity="Users", mappedBy="preferencesId")
-     * @ORM\Column(name="users_id", type="integer")
+     * @ORM\OneToMany(targetEntity="Driver", mappedBy="preferencesId")
+     * @ORM\Column(name="driver_id", type="integer")
      */
-    private $Users;
+    private $driver;
 
     /**
      * @var bool
@@ -363,27 +363,29 @@ class Preferences
         return $this->idTravel;
     }
 
+
+
     /**
-     * Set users
+     * Set driver
      *
-     * @param integer $users
+     * @param integer $driver
      *
      * @return Preferences
      */
-    public function setUsers($users)
+    public function setDriver($driver)
     {
-        $this->Users = $users;
+        $this->driver = $driver;
 
         return $this;
     }
 
     /**
-     * Get users
+     * Get driver
      *
      * @return integer
      */
-    public function getUsers()
+    public function getDriver()
     {
-        return $this->Users;
+        return $this->driver;
     }
 }

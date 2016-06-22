@@ -98,14 +98,7 @@ class Users
      */
     private $driver;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="preferences_id", type="integer")
-     * @ORM\OneToOne(targetEntity="Preferences")
-     * @ORM\JoinColumn(name="preferences_id", referencedColumnName="id")
-     */
-    private $preferencesId;
+
     /**
     * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
     */
@@ -254,29 +247,6 @@ class Users
     public function getTel()
     {
         return $this->tel;
-    }
-    /**
-     * Set preferencesId
-     *
-     * @param integer $preferencesId
-     *
-     * @return Driver
-     */
-    public function setPreferencesId($preferencesId)
-    {
-        $this->preferencesId = $preferencesId;
-
-        return $this;
-    }
-
-    /**
-     * Get preferencesId
-     *
-     * @return int
-     */
-    public function getPreferencesId()
-    {
-        return $this->preferencesId;
     }
 
     /**

@@ -10,4 +10,12 @@ namespace CF\CarBundle\Repository;
  */
 class TravelRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function AllTravelByPrefAndDriver(){
+
+        $query = $this->getEntityManager()
+            ->createQuery(
+                'SELECT ,  FROM CFCarBundle:Travel t
+            JOIN p.category c
+            WHERE p.id = :id'
+    }
 }

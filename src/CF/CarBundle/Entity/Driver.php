@@ -84,7 +84,14 @@ class Driver
      */
     private $noteMoyenne;
 
-
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="preferences_id", type="integer")
+     * @ORM\OneToOne(targetEntity="Preferences")
+     * @ORM\JoinColumn(name="preferences_id", referencedColumnName="id")
+     */
+    private $preferencesId;
     /**
      * Get id
      *
@@ -157,6 +164,30 @@ class Driver
 
         return $this;
     }
+    /**
+     * Set preferencesId
+     *
+     * @param integer $preferencesId
+     *
+     * @return Driver
+     */
+    public function setPreferencesId($preferencesId)
+    {
+        $this->preferencesId = $preferencesId;
+
+        return $this;
+    }
+
+    /**
+     * Get preferencesId
+     *
+     * @return int
+     */
+    public function getPreferencesId()
+    {
+        return $this->preferencesId;
+    }
+
 
     /**
      * Get marqueId
