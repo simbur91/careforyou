@@ -119,6 +119,23 @@ class Users
      * @ORM\OneToMany(targetEntity="Message",mappedBy="recipientId")
      */
     private $messagesend;
+
+    /**
+     * @var string
+     * @ORM\Column(name="login", type="string", length=255)
+     */
+    private $login;
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->message = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -392,21 +409,6 @@ class Users
     {
         return $this->driver;
     }
-    /**
-     * @var string
-     */
-    private $mobile;
-
-    /**
-     * @var string
-     */
-    private $language;
-
-    /**
-     * @var string
-     */
-    private $login;
-
 
     /**
      * Set mobile
@@ -493,16 +495,7 @@ class Users
     {
         return $this->login;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->message = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+
 
     /**
      * Add comment
@@ -511,7 +504,7 @@ class Users
      *
      * @return Users
      */
-    public function addComment(\CF\CarBundle\Entity\Comments $comment)
+    public function addComment(Comments $comment)
     {
         $this->comments[] = $comment;
 
@@ -523,7 +516,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Comments $comment
      */
-    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
+    public function removeComment(Comments $comment)
     {
         $this->comments->removeElement($comment);
     }
@@ -545,7 +538,7 @@ class Users
      *
      * @return Users
      */
-    public function addCommande(\CF\CarBundle\Entity\Commande $commande)
+    public function addCommande(Commande $commande)
     {
         $this->commande[] = $commande;
 
@@ -557,7 +550,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Commande $commande
      */
-    public function removeCommande(\CF\CarBundle\Entity\Commande $commande)
+    public function removeCommande(Commande $commande)
     {
         $this->commande->removeElement($commande);
     }
@@ -579,7 +572,7 @@ class Users
      *
      * @return Users
      */
-    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
+    public function setCoordonnees(Coordonnees $coordonnees = null)
     {
         $this->coordonnees = $coordonnees;
 
@@ -603,7 +596,7 @@ class Users
      *
      * @return Users
      */
-    public function addMessage(\CF\CarBundle\Entity\Message $message)
+    public function addMessage(Message $message)
     {
         $this->message[] = $message;
 
@@ -615,7 +608,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Message $message
      */
-    public function removeMessage(\CF\CarBundle\Entity\Message $message)
+    public function removeMessage(Message $message)
     {
         $this->message->removeElement($message);
     }
@@ -637,7 +630,7 @@ class Users
      *
      * @return Users
      */
-    public function addMessagesend(\CF\CarBundle\Entity\Message $messagesend)
+    public function addMessagesend(Message $messagesend)
     {
         $this->messagesend[] = $messagesend;
 
@@ -649,7 +642,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Message $messagesend
      */
-    public function removeMessagesend(\CF\CarBundle\Entity\Message $messagesend)
+    public function removeMessagesend(Message $messagesend)
     {
         $this->messagesend->removeElement($messagesend);
     }

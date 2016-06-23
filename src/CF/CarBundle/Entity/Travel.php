@@ -28,7 +28,7 @@ class Travel
      * @ORM\JoinColumn(name="driver_id", referencedColumnName="id")
      *
      */
-    private $driverId;
+    private $driver;
 
     /**
      * @var string
@@ -106,29 +106,7 @@ class Travel
         return $this->id;
     }
 
-    /**
-     * Set driverId
-     *
-     * @param integer $driverId
-     *
-     * @return Travel
-     */
-    public function setDriverId($driverId)
-    {
-        $this->driverId = $driverId;
 
-        return $this;
-    }
-
-    /**
-     * Get driverId
-     *
-     * @return int
-     */
-    public function getDriverId()
-    {
-        return $this->driverId;
-    }
 
     /**
      * Set cityDeparture
@@ -427,5 +405,29 @@ class Travel
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Set driver
+     *
+     * @param \CF\CarBundle\Entity\Driver $driver
+     *
+     * @return Travel
+     */
+    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
+    {
+        $this->driver = $driver;
+
+        return $this;
+    }
+
+    /**
+     * Get driver
+     *
+     * @return \CF\CarBundle\Entity\Driver
+     */
+    public function getDriver()
+    {
+        return $this->driver;
     }
 }

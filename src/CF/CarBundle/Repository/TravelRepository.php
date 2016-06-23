@@ -13,9 +13,9 @@ class TravelRepository extends \Doctrine\ORM\EntityRepository
     public function AllTravelByPrefAndDriver(){
 
         $qb=$this->createQueryBuilder('t')
-            ->join('t.driverId','driver')
+            ->join('t.driver','driver')
             ->join('driver.UserId','user')
-            ->join('driver.preferencesId','preferences')
+            ->join('driver.preferences','preferences')
             ->addSelect('driver')
             ->addSelect('user')
             ->addSelect('preferences');

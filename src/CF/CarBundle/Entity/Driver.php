@@ -30,33 +30,32 @@ class Driver
     private $place;
 
     /**
-     * @var int
+
      * @ORM\ManyToOne(targetEntity="Modele",inversedBy="driver")
      * @ORM\JoinColumn(name="modele_id", referencedColumnName="id")
-     * @ORM\Column(name="modele_id", type="integer")
+
      */
-    private $modeleId;
+    private $modele;
 
     /**
      *
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Users")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      *
      */
 
 
-    private $UserId;
+    private $User;
 
     /**
-     * @var int
+     *
      * @ORM\ManyToOne(targetEntity="Marque",inversedBy="driver")
-     * @ORM\JoinColumn(name="marque_id", referencedColumnName="id")
-     * @ORM\Column(name="marque_id", type="integer")
+     *
      */
 
 
-    private $IdMarque;
+    private $Marque;
 
     /**
      * @var int
@@ -89,7 +88,7 @@ class Driver
      * @ORM\OneToOne(targetEntity="Preferences",inversedBy="driver")
      *
      */
-    private $preferencesId;
+    private $preferences;
     /**
      * Get id
      *
@@ -125,65 +124,29 @@ class Driver
         return $this->place;
     }
 
+
     /**
-     * Set modeleId
+     * Set preferences
      *
-     * @param integer $modeleId
+     * @param integer $preferences
      *
      * @return Driver
      */
-    public function setModeleId($modeleId)
+    public function setpreferences($preferences)
     {
-        $this->modeleId = $modeleId;
+        $this->preferences = $preferences;
 
         return $this;
     }
 
     /**
-     * Get modeleId
+     * Get preferences
      *
      * @return int
      */
-    public function getModeleId()
+    public function getpreferences()
     {
-        return $this->modeleId;
-    }
-
-    /**
-     * Set marqueId
-     *
-     * @param integer $marqueId
-     *
-     * @return Driver
-     */
-    public function setMarqueId($marqueId)
-    {
-        $this->marqueId = $marqueId;
-
-        return $this;
-    }
-    /**
-     * Set preferencesId
-     *
-     * @param integer $preferencesId
-     *
-     * @return Driver
-     */
-    public function setPreferencesId($preferencesId)
-    {
-        $this->preferencesId = $preferencesId;
-
-        return $this;
-    }
-
-    /**
-     * Get preferencesId
-     *
-     * @return int
-     */
-    public function getPreferencesId()
-    {
-        return $this->preferencesId;
+        return $this->preferences;
     }
 
 
@@ -269,53 +232,9 @@ class Driver
         return $this->noteMoyenne;
     }
 
-    /**
-     * Set idMarque
-     *
-     * @param integer $idMarque
-     *
-     * @return Driver
-     */
-    public function setIdMarque($idMarque)
-    {
-        $this->IdMarque = $idMarque;
 
-        return $this;
-    }
 
-    /**
-     * Get idMarque
-     *
-     * @return integer
-     */
-    public function getIdMarque()
-    {
-        return $this->IdMarque;
-    }
 
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     *
-     * @return Driver
-     */
-    public function setUserId($userId)
-    {
-        $this->UserId = $userId;
-
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return integer
-     */
-    public function getUserId()
-    {
-        return $this->UserId;
-    }
     public function __construct()
     {
         $this->travel = new ArrayCollection();
@@ -353,5 +272,79 @@ class Driver
     public function getTravel()
     {
         return $this->travel;
+    }
+
+
+
+    /**
+     * Set modele
+     *
+     * @param \CF\CarBundle\Entity\Modele $modele
+     *
+     * @return Driver
+     */
+    public function setModele(\CF\CarBundle\Entity\Modele $modele = null)
+    {
+        $this->modele = $modele;
+
+        return $this;
+    }
+
+    /**
+     * Get modele
+     *
+     * @return \CF\CarBundle\Entity\Modele
+     */
+    public function getModele()
+    {
+        return $this->modele;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     *
+     * @return Driver
+     */
+    public function setUser(\CF\CarBundle\Entity\Users $user = null)
+    {
+        $this->User = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \CF\CarBundle\Entity\Users
+     */
+    public function getUser()
+    {
+        return $this->User;
+    }
+
+    /**
+     * Set marque
+     *
+     * @param \CF\CarBundle\Entity\Marque $marque
+     *
+     * @return Driver
+     */
+    public function setMarque(\CF\CarBundle\Entity\Marque $marque = null)
+    {
+        $this->Marque = $marque;
+
+        return $this;
+    }
+
+    /**
+     * Get marque
+     *
+     * @return \CF\CarBundle\Entity\Marque
+     */
+    public function getMarque()
+    {
+        return $this->Marque;
     }
 }

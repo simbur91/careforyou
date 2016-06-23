@@ -60,53 +60,6 @@ class Comments
         return $this->id;
     }
 
-    /**
-     * Set idUser
-     *
-     * @param integer $idUser
-     *
-     * @return Comments
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    /**
-     * Get idUser
-     *
-     * @return int
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * Set idTravel
-     *
-     * @param integer $idTravel
-     *
-     * @return Comments
-     */
-    public function setIdTravel($idTravel)
-    {
-        $this->idTravel = $idTravel;
-
-        return $this;
-    }
-
-    /**
-     * Get idTravel
-     *
-     * @return int
-     */
-    public function getIdTravel()
-    {
-        return $this->idTravel;
-    }
 
     /**
      * Set datePublication

@@ -22,10 +22,10 @@ class Coordonnees
     private $id;
 
     /**
-     * @var int
+
      * @ORM\OneToMany(targetEntity="Users",mappedBy="coordonnees")
-     * @ORM\JoinColumn(name="id_users", referencedColumnName="id")
-     * @ORM\Column(name="id_users", type="integer")
+
+
      */
     private $users;
 
@@ -231,5 +231,29 @@ class Coordonnees
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     *
+     * @return Coordonnees
+     */
+    public function addUser(\CF\CarBundle\Entity\Users $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     */
+    public function removeUser(\CF\CarBundle\Entity\Users $user)
+    {
+        $this->users->removeElement($user);
     }
 }

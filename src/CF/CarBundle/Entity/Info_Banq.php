@@ -50,12 +50,9 @@ class Info_Banq
     private $institution;
 
     /**
-     * @var int
      * @ORM\OneToOne(targetEntity="Users")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     * @ORM\Column(name="user_id", type="integer")
      */
-    private $userId;
+    private $user;
 
 
     /**
@@ -164,27 +161,29 @@ class Info_Banq
         return $this->institution;
     }
 
+
+
     /**
-     * Set userId
+     * Set user
      *
-     * @param integer $userId
+     * @param \CF\CarBundle\Entity\Users $user
      *
      * @return Info_Banq
      */
-    public function setUserId($userId)
+    public function setUser(\CF\CarBundle\Entity\Users $user = null)
     {
-        $this->userId = $userId;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userId
+     * Get user
      *
-     * @return int
+     * @return \CF\CarBundle\Entity\Users
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->userId;
+        return $this->user;
     }
 }

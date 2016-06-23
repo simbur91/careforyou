@@ -91,7 +91,6 @@ class Preferences
      */
     private $confort;
 
-
     /**
      * Get id
      *
@@ -318,15 +317,7 @@ class Preferences
     {
         return $this->confort;
     }
-    /**
-     * @var integer
-     */
-    private $idPreferences;
 
-    /**
-     * @var \CF\CarBundle\Entity\Travel
-     */
-    private $idTravel;
 
 
     /**

@@ -27,8 +27,11 @@ class Competition
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-
-
+/**
+ *
+ * @ORM\OneToOne(targetEntity="Sponsors",inversedBy="competition")
+ */
+    private $sponsors;
     /**
      * Get id
      *
@@ -76,5 +79,29 @@ class Competition
     public function getIdCompetition()
     {
         return $this->idCompetition;
+    }
+
+    /**
+     * Set sponsors
+     *
+     * @param \CF\CarBundle\Entity\Sponsors $sponsors
+     *
+     * @return Competition
+     */
+    public function setSponsors(\CF\CarBundle\Entity\Sponsors $sponsors = null)
+    {
+        $this->sponsors = $sponsors;
+
+        return $this;
+    }
+
+    /**
+     * Get sponsors
+     *
+     * @return \CF\CarBundle\Entity\Sponsors
+     */
+    public function getSponsors()
+    {
+        return $this->sponsors;
     }
 }

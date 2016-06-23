@@ -36,11 +36,11 @@ class Sponsors
     private $description;
 
     /**
-     * @var int
+     * @ORM\OneToMany(targetEntity="Competition",mappedBy="sponsors")
      *
      * @ORM\Column(name="competition_id", type="integer")
      */
-    private $competitionId;
+    private $competition;
 
 
     /**
@@ -167,5 +167,29 @@ class Sponsors
     public function getIdCompetition()
     {
         return $this->idCompetition;
+    }
+
+    /**
+     * Set competition
+     *
+     * @param integer $competition
+     *
+     * @return Sponsors
+     */
+    public function setCompetition($competition)
+    {
+        $this->competition = $competition;
+
+        return $this;
+    }
+
+    /**
+     * Get competition
+     *
+     * @return integer
+     */
+    public function getCompetition()
+    {
+        return $this->competition;
     }
 }

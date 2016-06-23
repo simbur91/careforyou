@@ -22,18 +22,16 @@ class Commande
     private $id;
 
     /**
-     * @var int
+
      * @ORM\OneToMany(targetEntity="Travel",mappedBy="commande")
-     * @ORM\JoinColumn(name="id_trajet", referencedColumnName="id")
-     * @ORM\Column(name="id_trajet", type="integer")
      */
     private $Trajet;
 
     /**
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Users",inversedBy="commande")
-     * @ORM\JoinColumn(name="id_users", referencedColumnName="id")
-     * @ORM\Column(name="id_users", type="integer")
+
+     *
      */
     private $Users;
     /**
@@ -61,29 +59,7 @@ class Commande
         return $this->id;
     }
 
-    /**
-     * Set idTrajet
-     *
-     * @param integer $idTrajet
-     *
-     * @return Commande
-     */
-    public function setIdTrajet($idTrajet)
-    {
-        $this->idTrajet = $idTrajet;
 
-        return $this;
-    }
-
-    /**
-     * Get idTrajet
-     *
-     * @return int
-     */
-    public function getIdTrajet()
-    {
-        return $this->idTrajet;
-    }
 
     /**
      * Set validation
@@ -138,23 +114,7 @@ class Commande
     private $idCommande;
 
 
-    /**
-     * Get idCommande
-     *
-     * @return integer
-     */
-    public function getIdCommande()
-    {
-        return $this->idCommande;
-    }
 
-    /**
-     * Set trajet
-     *
-     * @param integer $trajet
-     *
-     * @return Commande
-     */
     public function setTrajet($trajet)
     {
         $this->Trajet = $trajet;
@@ -194,5 +154,36 @@ class Commande
     public function getUsers()
     {
         return $this->Users;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Trajet = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add trajet
+     *
+     * @param \CF\CarBundle\Entity\Travel $trajet
+     *
+     * @return Commande
+     */
+    public function addTrajet(\CF\CarBundle\Entity\Travel $trajet)
+    {
+        $this->Trajet[] = $trajet;
+
+        return $this;
+    }
+
+    /**
+     * Remove trajet
+     *
+     * @param \CF\CarBundle\Entity\Travel $trajet
+     */
+    public function removeTrajet(\CF\CarBundle\Entity\Travel $trajet)
+    {
+        $this->Trajet->removeElement($trajet);
     }
 }
