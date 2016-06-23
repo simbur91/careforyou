@@ -22,7 +22,9 @@
         {% for travel in travels %}
             <tr>
                 <td><a href="{{ path('travel_show', { 'id': travel.id }) }}">{{ travel.id }}</a></td>
-                <td>{{ travel.driverId }}</td>
+             <td>{% for driver in travel.DriverId %}
+                     {{ driver.id }}
+                 {% endfor %}</td>
                 <td>{{ travel.cityDeparture }}</td>
                 <td>{{ travel.cityFinish }}</td>
                 <td>{{ travel.placeFree }}</td>

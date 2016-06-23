@@ -14,11 +14,11 @@ class TravelRepository extends \Doctrine\ORM\EntityRepository
 
         $qb=$this->createQueryBuilder('t')
             ->join('t.driverId','driver')
-            ->leftJoin('driver.preferencesId','p')
             ->join('driver.UserId','user')
+            ->join('driver.preferencesId','preferences')
             ->addSelect('driver')
-            ->addSelect('p')
-            ->addSelect('user');
+            ->addSelect('user')
+            ->addSelect('preferences');
 
         return $qb->getQuery()->getResult();
     }
