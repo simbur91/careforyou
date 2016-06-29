@@ -22,7 +22,6 @@ class Commande
     private $id;
 
     /**
-
      * @ORM\OneToMany(targetEntity="Travel",mappedBy="commande")
      */
     private $Trajet;
@@ -30,7 +29,6 @@ class Commande
     /**
      *
      * @ORM\OneToOne(targetEntity="Users",inversedBy="commande")
-
      *
      */
     private $Users;
@@ -48,18 +46,23 @@ class Commande
      */
     private $statut;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Trajet = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
-
 
     /**
      * Set validation
@@ -108,60 +111,6 @@ class Commande
     {
         return $this->statut;
     }
-    /**
-     * @var integer
-     */
-    private $idCommande;
-
-
-
-    public function setTrajet($trajet)
-    {
-        $this->Trajet = $trajet;
-
-        return $this;
-    }
-
-    /**
-     * Get trajet
-     *
-     * @return integer
-     */
-    public function getTrajet()
-    {
-        return $this->Trajet;
-    }
-
-    /**
-     * Set users
-     *
-     * @param integer $users
-     *
-     * @return Commande
-     */
-    public function setUsers($users)
-    {
-        $this->Users = $users;
-
-        return $this;
-    }
-
-    /**
-     * Get users
-     *
-     * @return integer
-     */
-    public function getUsers()
-    {
-        return $this->Users;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->Trajet = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add trajet
@@ -185,5 +134,39 @@ class Commande
     public function removeTrajet(\CF\CarBundle\Entity\Travel $trajet)
     {
         $this->Trajet->removeElement($trajet);
+    }
+
+    /**
+     * Get trajet
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTrajet()
+    {
+        return $this->Trajet;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \CF\CarBundle\Entity\Users $users
+     *
+     * @return Commande
+     */
+    public function setUsers(\CF\CarBundle\Entity\Users $users = null)
+    {
+        $this->Users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \CF\CarBundle\Entity\Users
+     */
+    public function getUsers()
+    {
+        return $this->Users;
     }
 }

@@ -73,11 +73,9 @@ class Travel
     private $itinary;
 
     /**
-     * @var int
      * @ORM\ManyToMany(targetEntity="Users")
-     * @ORM\Column(name="users_id", type="integer")
      */
-    private $usersId;
+    private $users;
     /**
 
      * @ORM\OneToMany(targetEntity="Comments", mappedBy="travel")
@@ -85,28 +83,31 @@ class Travel
     private $comments;
 
     /**
-
      * @ORM\OneToOne(targetEntity="Commande")
-
      */
     private $commande;
 
+
+
+
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->usersId = new ArrayCollection();
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
-
 
     /**
      * Set cityDeparture
@@ -173,7 +174,7 @@ class Travel
     /**
      * Get placeFree
      *
-     * @return int
+     * @return integer
      */
     public function getPlaceFree()
     {
@@ -221,7 +222,7 @@ class Travel
     /**
      * Get distance
      *
-     * @return int
+     * @return integer
      */
     public function getDistance()
     {
@@ -253,161 +254,6 @@ class Travel
     }
 
     /**
-     * Set usersId
-     *
-     * @param integer $usersId
-     *
-     * @return Travel
-     */
-    public function setUsersId($usersId)
-    {
-        $this->usersId = $usersId;
-
-        return $this;
-    }
-
-    /**
-     * Get usersId
-     *
-     * @return int
-     */
-    public function getUsersId()
-    {
-        return $this->usersId;
-    }
-    /**
-     * @var integer
-     */
-    private $idTrajet;
-
-    /**
-     * @var \CF\CarBundle\Entity\Users
-     */
-    private $users;
-
-    /**
-     * @var \CF\CarBundle\Entity\Driver
-     */
-    private $idDriver;
-
-
-    /**
-     * Get idTrajet
-     *
-     * @return integer
-     */
-    public function getIdTrajet()
-    {
-        return $this->idTrajet;
-    }
-
-    /**
-     * Set users
-     *
-     * @param \CF\CarBundle\Entity\Users $users
-     *
-     * @return Travel
-     */
-    public function setUsers(Users $users = null)
-    {
-        $this->users = $users;
-
-        return $this;
-    }
-
-    /**
-     * Get users
-     *
-     * @return \CF\CarBundle\Entity\Users
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * Set idDriver
-     *
-     * @param \CF\CarBundle\Entity\Driver $idDriver
-     *
-     * @return Travel
-     */
-    public function setIdDriver(Driver $idDriver = null)
-    {
-        $this->idDriver = $idDriver;
-
-        return $this;
-    }
-
-    /**
-     * Get idDriver
-     *
-     * @return \CF\CarBundle\Entity\Driver
-     */
-    public function getIdDriver()
-    {
-        return $this->idDriver;
-    }
-
-    /**
-     * Set commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     *
-     * @return Travel
-     */
-    public function setCommande(Commande $commande = null)
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Get commande
-     *
-     * @return \CF\CarBundle\Entity\Commande
-     */
-    public function getCommande()
-    {
-        return $this->commande;
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     *
-     * @return Travel
-     */
-    public function addComment(Comments $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     */
-    public function removeComment(Comments $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
      * Set driver
      *
      * @param \CF\CarBundle\Entity\Driver $driver
@@ -429,5 +275,97 @@ class Travel
     public function getDriver()
     {
         return $this->driver;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     *
+     * @return Travel
+     */
+    public function addUser(\CF\CarBundle\Entity\Users $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     */
+    public function removeUser(\CF\CarBundle\Entity\Users $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \CF\CarBundle\Entity\Comments $comment
+     *
+     * @return Travel
+     */
+    public function addComment(\CF\CarBundle\Entity\Comments $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \CF\CarBundle\Entity\Comments $comment
+     */
+    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Set commande
+     *
+     * @param \CF\CarBundle\Entity\Commande $commande
+     *
+     * @return Travel
+     */
+    public function setCommande(\CF\CarBundle\Entity\Commande $commande = null)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande
+     *
+     * @return \CF\CarBundle\Entity\Commande
+     */
+    public function getCommande()
+    {
+        return $this->commande;
     }
 }

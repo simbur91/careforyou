@@ -24,9 +24,9 @@ class Marque
     /**
      * @var string
      *
-     * @ORM\Column(name="marque_name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $marqueName;
+    private $name;
     /**
      * @ORM\OneToMany(targetEntity="Driver", mappedBy="IdMarque")
      */
@@ -35,10 +35,21 @@ class Marque
      * @ORM\OneToMany(targetEntity="Modele", mappedBy="IdMarque")
      */
     private $modele;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->modele = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -46,32 +57,27 @@ class Marque
     }
 
     /**
-     * Set marqueName
+     * Set name
      *
-     * @param string $marqueName
+     * @param string $name
      *
      * @return Marque
      */
-    public function setMarqueName($marqueName)
+    public function setName($name)
     {
-        $this->marqueName = $marqueName;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get marqueName
+     * Get name
      *
      * @return string
      */
-    public function getMarqueName()
+    public function getName()
     {
-        return $this->marqueName;
-    }
-    public function __construct()
-    {
-        $this->modele = new ArrayCollection();
-        $this->driver = new ArrayCollection();
+        return $this->name;
     }
 
     /**

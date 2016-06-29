@@ -92,17 +92,15 @@ class Users
     private $sexe;
 
     /**
-     * @var bool
      * @ORM\OneToOne(targetEntity="Driver")
-     * @ORM\Column(name="driver", type="boolean")
      */
     private $driver;
 
 
     /**
-    * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
-    */
-    private  $comments;
+     * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
+     */
+    private $comments;
     /**
      * @ORM\OneToMany(targetEntity="Commande",mappedBy="user")
      */
@@ -125,6 +123,7 @@ class Users
      * @ORM\Column(name="login", type="string", length=255)
      */
     private $login;
+
     /**
      * Constructor
      */
@@ -139,7 +138,7 @@ class Users
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -331,7 +330,7 @@ class Users
     /**
      * Get admin
      *
-     * @return bool
+     * @return boolean
      */
     public function getAdmin()
     {
@@ -387,92 +386,6 @@ class Users
     }
 
     /**
-     * Set driver
-     *
-     * @param boolean $driver
-     *
-     * @return Users
-     */
-    public function setDriver($driver)
-    {
-        $this->driver = $driver;
-
-        return $this;
-    }
-
-    /**
-     * Get driver
-     *
-     * @return bool
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
-
-    /**
-     * Set mobile
-     *
-     * @param string $mobile
-     *
-     * @return Users
-     */
-    public function setMobile($mobile)
-    {
-        $this->mobile = $mobile;
-
-        return $this;
-    }
-
-    /**
-     * Get mobile
-     *
-     * @return string
-     */
-    public function getMobile()
-    {
-        return $this->mobile;
-    }
-
-    /**
-     * Set language
-     *
-     * @param string $language
-     *
-     * @return Users
-     */
-    public function setLanguage($language)
-    {
-        $this->language = $language;
-
-        return $this;
-    }
-
-    /**
-     * Get language
-     *
-     * @return string
-     */
-    public function getLanguage()
-    {
-        return $this->language;
-    }
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return Users
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
      * Set login
      *
      * @param string $login
@@ -496,6 +409,29 @@ class Users
         return $this->login;
     }
 
+    /**
+     * Set driver
+     *
+     * @param \CF\CarBundle\Entity\Driver $driver
+     *
+     * @return Users
+     */
+    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
+    {
+        $this->driver = $driver;
+
+        return $this;
+    }
+
+    /**
+     * Get driver
+     *
+     * @return \CF\CarBundle\Entity\Driver
+     */
+    public function getDriver()
+    {
+        return $this->driver;
+    }
 
     /**
      * Add comment
@@ -504,7 +440,7 @@ class Users
      *
      * @return Users
      */
-    public function addComment(Comments $comment)
+    public function addComment(\CF\CarBundle\Entity\Comments $comment)
     {
         $this->comments[] = $comment;
 
@@ -516,7 +452,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Comments $comment
      */
-    public function removeComment(Comments $comment)
+    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
     {
         $this->comments->removeElement($comment);
     }
@@ -538,7 +474,7 @@ class Users
      *
      * @return Users
      */
-    public function addCommande(Commande $commande)
+    public function addCommande(\CF\CarBundle\Entity\Commande $commande)
     {
         $this->commande[] = $commande;
 
@@ -550,7 +486,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Commande $commande
      */
-    public function removeCommande(Commande $commande)
+    public function removeCommande(\CF\CarBundle\Entity\Commande $commande)
     {
         $this->commande->removeElement($commande);
     }
@@ -572,7 +508,7 @@ class Users
      *
      * @return Users
      */
-    public function setCoordonnees(Coordonnees $coordonnees = null)
+    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
     {
         $this->coordonnees = $coordonnees;
 
@@ -596,7 +532,7 @@ class Users
      *
      * @return Users
      */
-    public function addMessage(Message $message)
+    public function addMessage(\CF\CarBundle\Entity\Message $message)
     {
         $this->message[] = $message;
 
@@ -608,7 +544,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Message $message
      */
-    public function removeMessage(Message $message)
+    public function removeMessage(\CF\CarBundle\Entity\Message $message)
     {
         $this->message->removeElement($message);
     }
@@ -630,7 +566,7 @@ class Users
      *
      * @return Users
      */
-    public function addMessagesend(Message $messagesend)
+    public function addMessagesend(\CF\CarBundle\Entity\Message $messagesend)
     {
         $this->messagesend[] = $messagesend;
 
@@ -642,7 +578,7 @@ class Users
      *
      * @param \CF\CarBundle\Entity\Message $messagesend
      */
-    public function removeMessagesend(Message $messagesend)
+    public function removeMessagesend(\CF\CarBundle\Entity\Message $messagesend)
     {
         $this->messagesend->removeElement($messagesend);
     }

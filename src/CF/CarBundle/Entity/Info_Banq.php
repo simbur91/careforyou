@@ -55,10 +55,11 @@ class Info_Banq
     private $user;
 
 
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -160,8 +161,6 @@ class Info_Banq
     {
         return $this->institution;
     }
-
-
 
     /**
      * Set user

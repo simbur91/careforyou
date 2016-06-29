@@ -66,37 +66,21 @@ class Coordonnees
 
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idUsers
-     *
-     * @param integer $idUsers
-     *
-     * @return Coordonnees
-     */
-    public function setUsers($Users)
-    {
-        $this->users = $Users;
-
-        return $this;
-    }
-
-    /**
-     * Get idUsers
-     *
-     * @return int
-     */
-    public function geUsers()
-    {
-        return $this->users;
     }
 
     /**
@@ -140,7 +124,7 @@ class Coordonnees
     /**
      * Get adressNum
      *
-     * @return int
+     * @return integer
      */
     public function getAdressNum()
     {
@@ -218,20 +202,6 @@ class Coordonnees
     {
         return $this->adressCountry;
     }
-    public function __construct()
-    {
-        $this->users = new ArrayCollection();
-    }
-
-    /**
-     * Get users
-     *
-     * @return integer
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
 
     /**
      * Add user
@@ -255,5 +225,15 @@ class Coordonnees
     public function removeUser(\CF\CarBundle\Entity\Users $user)
     {
         $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

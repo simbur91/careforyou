@@ -1,4 +1,7 @@
-CarBundle\Entity\Advice:
+CF\CarBundle\Entity\Advice:
     advice:
-        iduser: @user
+        user: @user
+        driver: @driver
+        content:
+        evaluation:
 

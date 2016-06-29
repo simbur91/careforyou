@@ -91,16 +91,24 @@ class Preferences
      */
     private $confort;
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
 
     /**
      * Set animal
@@ -119,7 +127,7 @@ class Preferences
     /**
      * Get animal
      *
-     * @return bool
+     * @return boolean
      */
     public function getAnimal()
     {
@@ -143,7 +151,7 @@ class Preferences
     /**
      * Get smoker
      *
-     * @return bool
+     * @return boolean
      */
     public function getSmoker()
     {
@@ -167,7 +175,7 @@ class Preferences
     /**
      * Get talker
      *
-     * @return bool
+     * @return boolean
      */
     public function getTalker()
     {
@@ -215,7 +223,7 @@ class Preferences
     /**
      * Get food
      *
-     * @return bool
+     * @return boolean
      */
     public function getFood()
     {
@@ -311,80 +319,11 @@ class Preferences
     /**
      * Get confort
      *
-     * @return int
+     * @return integer
      */
     public function getConfort()
     {
         return $this->confort;
-    }
-
-
-
-    /**
-     * Get idPreferences
-     *
-     * @return integer
-     */
-    public function getIdPreferences()
-    {
-        return $this->idPreferences;
-    }
-
-    /**
-     * Set idTravel
-     *
-     * @param \CF\CarBundle\Entity\Travel $idTravel
-     *
-     * @return Preferences
-     */
-    public function setIdTravel(\CF\CarBundle\Entity\Travel $idTravel = null)
-    {
-        $this->idTravel = $idTravel;
-
-        return $this;
-    }
-
-    /**
-     * Get idTravel
-     *
-     * @return \CF\CarBundle\Entity\Travel
-     */
-    public function getIdTravel()
-    {
-        return $this->idTravel;
-    }
-
-
-
-    /**
-     * Set driver
-     *
-     * @param integer $driver
-     *
-     * @return Preferences
-     */
-    public function setDriver($driver)
-    {
-        $this->driver = $driver;
-
-        return $this;
-    }
-
-    /**
-     * Get driver
-     *
-     * @return integer
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -409,5 +348,15 @@ class Preferences
     public function removeDriver(\CF\CarBundle\Entity\Driver $driver)
     {
         $this->driver->removeElement($driver);
+    }
+
+    /**
+     * Get driver
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDriver()
+    {
+        return $this->driver;
     }
 }

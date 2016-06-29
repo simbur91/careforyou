@@ -24,7 +24,6 @@ class Advice
     /**
      *
      * @ORM\OneToOne(targetEntity="Users")
-
      *
      */
     private $User;
@@ -32,7 +31,6 @@ class Advice
     /**
      *
      * @ORM\OneToOne(targetEntity="Driver")
-
      *
      */
     private $driver;
@@ -49,20 +47,19 @@ class Advice
      *
      * @ORM\Column(name="evaluation", type="integer")
      */
+
     private $evaluation;
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
-
 
     /**
      * Set content
@@ -105,14 +102,12 @@ class Advice
     /**
      * Get evaluation
      *
-     * @return int
+     * @return integer
      */
     public function getEvaluation()
     {
         return $this->evaluation;
     }
-
-
 
     /**
      * Set user

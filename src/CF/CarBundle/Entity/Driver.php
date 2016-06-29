@@ -73,7 +73,7 @@ class Driver
     /**
      *
      *
-     * @ORM\OneToMany(targetEntity="Travel",mappedBy="driverId")
+     * @ORM\OneToMany(targetEntity="Travel",mappedBy="driver")
      */
     private $travel;
     /**
@@ -89,16 +89,24 @@ class Driver
      *
      */
     private $preferences;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
 
     /**
      * Set place
@@ -117,47 +125,11 @@ class Driver
     /**
      * Get place
      *
-     * @return int
+     * @return integer
      */
     public function getPlace()
     {
         return $this->place;
-    }
-
-
-    /**
-     * Set preferences
-     *
-     * @param integer $preferences
-     *
-     * @return Driver
-     */
-    public function setpreferences($preferences)
-    {
-        $this->preferences = $preferences;
-
-        return $this;
-    }
-
-    /**
-     * Get preferences
-     *
-     * @return int
-     */
-    public function getpreferences()
-    {
-        return $this->preferences;
-    }
-
-
-    /**
-     * Get marqueId
-     *
-     * @return int
-     */
-    public function getMarqueId()
-    {
-        return $this->marqueId;
     }
 
     /**
@@ -177,7 +149,7 @@ class Driver
     /**
      * Get rayon
      *
-     * @return int
+     * @return integer
      */
     public function getRayon()
     {
@@ -225,56 +197,12 @@ class Driver
     /**
      * Get noteMoyenne
      *
-     * @return int
+     * @return integer
      */
     public function getNoteMoyenne()
     {
         return $this->noteMoyenne;
     }
-
-
-
-
-    public function __construct()
-    {
-        $this->travel = new ArrayCollection();
-    }
-
-    /**
-     * Add travel
-     *
-     * @param \CF\CarBundle\Entity\Travel $travel
-     *
-     * @return Driver
-     */
-    public function addTravel(\CF\CarBundle\Entity\Travel $travel)
-    {
-        $this->travel[] = $travel;
-
-        return $this;
-    }
-
-    /**
-     * Remove travel
-     *
-     * @param \CF\CarBundle\Entity\Travel $travel
-     */
-    public function removeTravel(\CF\CarBundle\Entity\Travel $travel)
-    {
-        $this->travel->removeElement($travel);
-    }
-
-    /**
-     * Get travel
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTravel()
-    {
-        return $this->travel;
-    }
-
-
 
     /**
      * Set modele
@@ -346,5 +274,63 @@ class Driver
     public function getMarque()
     {
         return $this->Marque;
+    }
+
+    /**
+     * Add travel
+     *
+     * @param \CF\CarBundle\Entity\Travel $travel
+     *
+     * @return Driver
+     */
+    public function addTravel(\CF\CarBundle\Entity\Travel $travel)
+    {
+        $this->travel[] = $travel;
+
+        return $this;
+    }
+
+    /**
+     * Remove travel
+     *
+     * @param \CF\CarBundle\Entity\Travel $travel
+     */
+    public function removeTravel(\CF\CarBundle\Entity\Travel $travel)
+    {
+        $this->travel->removeElement($travel);
+    }
+
+    /**
+     * Get travel
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTravel()
+    {
+        return $this->travel;
+    }
+
+    /**
+     * Set preferences
+     *
+     * @param \CF\CarBundle\Entity\Preferences $preferences
+     *
+     * @return Driver
+     */
+    public function setPreferences(\CF\CarBundle\Entity\Preferences $preferences = null)
+    {
+        $this->preferences = $preferences;
+
+        return $this;
+    }
+
+    /**
+     * Get preferences
+     *
+     * @return \CF\CarBundle\Entity\Preferences
+     */
+    public function getPreferences()
+    {
+        return $this->preferences;
     }
 }

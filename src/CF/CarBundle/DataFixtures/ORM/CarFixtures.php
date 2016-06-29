@@ -2,27 +2,64 @@
 
 namespace CF\CarBundle\DataFixtures\ORM;
 
-use Hautelook\AliceBundle\Alice\DataFixtureLoader;
-use Nelmio\Alice\Fixtures\Fixtures;
-use Hautelook\AliceBundle\Faker;
-use Faker\Factory;
+use Hautelook\AliceBundle\Doctrine\DataFixtures\AbstractLoader;
 
-class CarFixtures extends DataFixtureLoader
+class CarFixtures extends AbstractLoader
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
-    protected function getFixtures()
+    public function getFixtures()
     {
         return  array(
-            __DIR__ . '/advice.yml',
+            __DIR__ . '/marque.yml',
         );
     }
-    public  function uniqueId(){
-        $faker = Factory::create();
-        $values = array();
-        for ($i=0; $i < 10; $i++) {
-            $values []= $faker->unique()->randomDigit;
-        }
+    public function marque(){
+
+       $genera=[
+           'Abarth',
+           'Alfa Romeo',
+           'Aston Martin',
+           'Audi',
+           'Bentley',
+           'BMW',
+           'Chevrolet',
+           'Citroen',
+           'Dacia',
+           'DS',
+           'Ferrari',
+           'Fiat',
+           'Ford',
+           'Honda',
+           'Hyundai',
+           'Infiniti',
+           'Jaguar',
+           'Jeep',
+           'Kia',
+           'Lada',
+           'Lamborghini',
+           'Lancia',
+           'Land Rover',
+           'Lexus',
+           'Lotus',
+           'Maserati',
+           'Mazda',
+           'Mclaren',
+           'Mercedes-Benz',
+           'Mini',
+           'Mitsubishi',
+           'Nissan',
+           'Opel',
+           'Peugeot',
+           'Porsche',
+           'Renault',
+           'Rolls Royce'
+
+       ];
+    $key=array_rand($genera);
+    $key=array_unique($key);
+        return $genera[$key];
+
     }
 }

@@ -27,15 +27,17 @@ class Competition
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-/**
- *
- * @ORM\OneToOne(targetEntity="Sponsors",inversedBy="competition")
- */
+    /**
+     *
+     * @ORM\OneToOne(targetEntity="Sponsors",inversedBy="competition")
+     */
     private $sponsors;
+
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -64,21 +66,6 @@ class Competition
     public function getName()
     {
         return $this->name;
-    }
-    /**
-     * @var integer
-     */
-    private $idCompetition;
-
-
-    /**
-     * Get idCompetition
-     *
-     * @return integer
-     */
-    public function getIdCompetition()
-    {
-        return $this->idCompetition;
     }
 
     /**
