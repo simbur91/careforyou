@@ -1,0 +1,12 @@
+header img.logo {
+	position: relative;
+	top: 30px;
+	left: 9px;
+}
+header img.banner {}
+header h1.main-title {
+	position: relative;
+	top: -205px;
+	left: 143px;
+	font-size:60px;
+}

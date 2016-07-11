@@ -109,7 +109,7 @@ class Users
     /**
     * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
     */
-    private  $comments;
+    private $comments;
     /**
      * @ORM\OneToMany(targetEntity="Commande",mappedBy="user")
      */

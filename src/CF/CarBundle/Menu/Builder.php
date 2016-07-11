@@ -15,9 +15,9 @@ class Builder implements ContainerAwareInterface
 
         $menu->addChild('Home',array('route'=>'cf_car_homepage'));
         $menu->addChild('Trajet',array('route'=>'cf_car_travel'));
-        $menu->addChild('Top Mensuel',array('route'=>''));
+        $menu->addChild('Top Mensuel',array('route'=>'cf_car_competition'));
         $menu->addChild('Inscription',array('route'=>''));
-        $menu->addChild('Connexion',array('route'=>''));
+        $menu->addChild('Connexion',array('route'=>'cf_car_login'));
         return $menu;
     }
 }

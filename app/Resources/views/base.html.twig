@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    {% block head %}
+        {#<link rel="stylesheet" href="{{asset('bundles/framework/css/style.css')}}" />#}
+        <link rel="stylesheet" href="{{asset('css/carstyle.css')}}"/>
+        <title>{% block title %}{% endblock %} - CarforYou</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <img src="{{asset('bundles/framework/images/logo.png')}}" class="logo"/>
+        <img src="{{asset('bundles/framework/images/banner.png')}}" class="banner"/>
+        <h1 class="main-title">ar for You</h1>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                         <nav class="nav navbar-nav">
+                             {{ knp_menu_render('CFCarBundle:Builder:mainMenu') }}
+                         </nav>
+                    </div>
+                </nav>
+
+                <aside>
+                    <ul class="navbar navbar-nav navbar-right social-link">
+                        <li><a href="#"><img src="{{asset('bundles/framework/images/facebook.png')}}"/></a></li>
+                        <li><a href="#"><img src="{{asset('bundles/framework/images/twitter.png')}}"/></a></li>
+                        <li><a href="#"><img src="{{asset('bundles/framework/images/instagram.png')}}"/></a></li>
+                        <li><a href="#"><img src="{{asset('bundles/framework/images/google-plus.png')}}"/></a></li>
+                    </ul>
+                    <form role=""form">
+                        <div class="form-group">
+                            <label for ="search"><input type="text" class="form-control" placeholder="Recherche ?"/></label>
+                            <button type="submit" class="btn btn-default">Envoyer</button>
+                        </div>
+                    </form>
+                </aside>
+    </header>
+<main class="container">
+    <div class="container center-block">
+    {% block body %}
+    {% endblock %}
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">Copyright 2016</p>
+        </div>
+    </footer>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 </html>
