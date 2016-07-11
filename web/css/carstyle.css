@@ -1,12 +1,46 @@
 header img.logo {
-	position: relative;
-	top: 30px;
-	left: 9px;
+	position: absolute;
+	top: 47px;
+	left: 410px;
 }
-header img.banner {}
+header img.banner{
+	position: absolute;
+	top: 0px;
+	left: 28%;
+}
 header h1.main-title {
-	position: relative;
-	top: -205px;
-	left: 143px;
-	font-size:60px;
+	position: absolute;
+	top: 33px;
+	left: 550px;
+	font-size: 60px;
+}
+h1{
+	padding: 0;
+	margin: 0;
+}
+._top {
+	height: 220px;
+}
+.footer {
+	height: 100px;
+	background-color: #f8f8f8;
+	color: cornflowerblue;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.navbar-default ul li{
+	padding: 10px 0px;
+}
+.social {
+	padding: 20px 20px;
+}
+._topsearch {
+	padding: 10px 40px;
+}
+.connexion {
+	margin-top: 50px;
+	width: 250px;
 }

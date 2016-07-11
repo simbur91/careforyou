@@ -4,14 +4,30 @@
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
+<div class="connexion center-block">
+    <fieldset class="form-group center-block">
+        <form action="{{ path('login') }}" method="post">
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input type="text" id="username" name="_username" class="form-control" placeholder="login" value="{{ last_username }}" required />
+            </div>
+            <div class="form-group input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input type="password" id="password" name="_password" class="form-control" placeholder="Mot de Passe" required />
+            </div>
+            <div class="text-center">
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <a href="#"><button type="button" class="btn btn-primary">S'enregistrer</button></a>
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
+                    <input type="submit" name="connect" class= "btn btn-success" value="Se connecter" id = "connectBtn"/>
+                    <input type="hidden" name="_target_path" value ="account" />
+                </div>
+            </div>
+        </form>
 
-<form action="{{ path('login') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    </fieldset>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+</div>
 
-    <button type="submit">login</button>
-</form>
 {% endblock %}
