@@ -54,7 +54,7 @@ class Info_Banq
      */
     private $user;
 
-
+    
 
     /**
      * Get id

@@ -27,12 +27,9 @@ class Marque
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+  
     /**
-     * @ORM\OneToMany(targetEntity="Driver", mappedBy="IdMarque")
-     */
-    private $driver;
-    /**
-     * @ORM\OneToMany(targetEntity="Modele", mappedBy="IdMarque")
+     * @ORM\OneToMany(targetEntity="Modele", mappedBy="marque")
      */
     private $modele;
 

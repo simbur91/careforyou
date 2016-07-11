@@ -12,7 +12,12 @@ class CarFixtures extends AbstractLoader
     public function getFixtures()
     {
         return  array(
+            __DIR__ . '/users.yml',
             __DIR__ . '/marque.yml',
+            __DIR__ . '/modele.yml',
+            __DIR__ . '/drivers.yml',
+            __DIR__ . '/comments.yml',
+            __DIR__ . '/travel.yml',
         );
     }
     public function marque(){

@@ -34,6 +34,8 @@ class Competition
     private $sponsors;
 
 
+   
+
     /**
      * Get id
      *

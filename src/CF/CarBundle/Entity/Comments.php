@@ -22,12 +22,12 @@ class Comments
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Users",inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="Users")
      */
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Travel",inversedBy="comments")
+     * @ORM\ManyToOne(targetEntity="Travel")
      */
     private $travel;
 
@@ -45,6 +45,8 @@ class Comments
      */
     private $content;
 
+
+   
 
     /**
      * Get id

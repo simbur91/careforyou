@@ -57,9 +57,9 @@ class Users
     private $tel;
 
     /**
-     * @var \DateTime
+     * @var  string
      *
-     * @ORM\Column(name="birthdate", type="date")
+     * @ORM\Column(name="birthdate", type="string", length=255)
      */
     private $birthdate;
 
@@ -90,21 +90,7 @@ class Users
      * @ORM\Column(name="sexe", type="string", length=10)
      */
     private $sexe;
-
-    /**
-     * @ORM\OneToOne(targetEntity="Driver")
-     */
-    private $driver;
-
-
-    /**
-     * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
-     */
-    private $comments;
-    /**
-     * @ORM\OneToMany(targetEntity="Commande",mappedBy="user")
-     */
-    private $commande;
+  
     /**
      * @ORM\OneToOne(targetEntity="Coordonnees",mappedBy="users")
      */
@@ -124,13 +110,12 @@ class Users
      */
     private $login;
 
+   
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
         $this->message = new \Doctrine\Common\Collections\ArrayCollection();
         $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -268,7 +253,7 @@ class Users
     /**
      * Set birthdate
      *
-     * @param \DateTime $birthdate
+     * @param string $birthdate
      *
      * @return Users
      */
@@ -282,7 +267,7 @@ class Users
     /**
      * Get birthdate
      *
-     * @return \DateTime
+     * @return string
      */
     public function getBirthdate()
     {
@@ -407,98 +392,6 @@ class Users
     public function getLogin()
     {
         return $this->login;
-    }
-
-    /**
-     * Set driver
-     *
-     * @param \CF\CarBundle\Entity\Driver $driver
-     *
-     * @return Users
-     */
-    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
-    {
-        $this->driver = $driver;
-
-        return $this;
-    }
-
-    /**
-     * Get driver
-     *
-     * @return \CF\CarBundle\Entity\Driver
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     *
-     * @return Users
-     */
-    public function addComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     */
-    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * Add commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     *
-     * @return Users
-     */
-    public function addCommande(\CF\CarBundle\Entity\Commande $commande)
-    {
-        $this->commande[] = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Remove commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     */
-    public function removeCommande(\CF\CarBundle\Entity\Commande $commande)
-    {
-        $this->commande->removeElement($commande);
-    }
-
-    /**
-     * Get commande
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCommande()
-    {
-        return $this->commande;
     }
 
     /**

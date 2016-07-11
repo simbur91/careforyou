@@ -23,7 +23,7 @@ class Preferences
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="Driver", mappedBy="preferencesId")
+     * @ORM\OneToOne(targetEntity="Driver")
      *
      */
     private $driver;
@@ -92,13 +92,7 @@ class Preferences
     private $confort;
 
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+   
 
     /**
      * Get id
@@ -327,33 +321,23 @@ class Preferences
     }
 
     /**
-     * Add driver
+     * Set driver
      *
      * @param \CF\CarBundle\Entity\Driver $driver
      *
      * @return Preferences
      */
-    public function addDriver(\CF\CarBundle\Entity\Driver $driver)
+    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
     {
-        $this->driver[] = $driver;
+        $this->driver = $driver;
 
         return $this;
     }
 
     /**
-     * Remove driver
-     *
-     * @param \CF\CarBundle\Entity\Driver $driver
-     */
-    public function removeDriver(\CF\CarBundle\Entity\Driver $driver)
-    {
-        $this->driver->removeElement($driver);
-    }
-
-    /**
      * Get driver
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \CF\CarBundle\Entity\Driver
      */
     public function getDriver()
     {

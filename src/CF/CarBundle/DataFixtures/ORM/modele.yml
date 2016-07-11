@@ -1,2 +1,189 @@
 CF\CarBundle\Entity\Modele:
-    name{500 Abarth,500c Abarth,Abarth 695 Biposto,4c,4c Spider,Giulietta,Giulietta Serie 2,Mito,Db9,Rapide,Vanquish,Vantage,A1,A1 Sportback,A3,A3 Cabriolet,A3 Sportback,A4,A4 Allroad,A4 Allroad Quattro Nouvelle,A4 Avant Nouvelle,A5,A5 Cabriolet,A5 Sportback,A6,A6 Allroad Quattro,A6 Avant,A7 Sportback,A8,Q3,Q5,Q7 Nouveau,R8,Rs Q3 Nouveau,Rs3 Sportback,Rs6 Avant,Rs7 Sportback,S1,S1 Sportback,S3,S3 Berline,S3 Cabriolet,S3 Sportback,S5,S5 Cabriolet,S5 Sportback,S6,S6 Avant,S7 Sportback,S8,Sq5,Tt Coupe,Tt Roadster,Tts Coupe,Tts Roadster,Bentayga,Continental Gt,Continental Gt3-R,Continental Gtc,Flying Spur,Mulsanne,I3,I8,M2 Coupe,M3,M4 Cabriolet,M4 Coupe,M5,M6 Cabriolet,M6 Coupe,M6 Gran Coupe,Serie 1 3 Portes,Serie 1 5 Portes,Serie 2 Active Tourer,Serie 2 Cabriolet,Serie 2 Coupe,Serie 2 Gran Tourer,Serie 3,Serie 3 Gt,Serie 3 Touring,Serie 4 Cabriolet,Serie 4 Coupe,Serie 4 Gran Coupe,Serie 5,Serie 5 Gt,Serie 5 Touring,Serie 6 Cabriolet,Serie 6 Coupe,Serie 6 Gran Coupe,Serie 7,X1,X3,X4,X5,X5 M,X6,X6 M,Z4,Camaro,Camaro Cabriolet,Corvette,Corvette Cabriolet,Berlingo Multispace,C-Elysee,C-Zero,C1,C3,C3 Picasso,C4,C4 Aircross,C4 Cactus,C4 Picasso,C5,C5 Tourer,C5 Tourer Xtr,E-Mehari,Grand C4 Picasso,Jumper Combi,Jumpy Combi,Nemo,Spacetourer,Dokker,Duster,Lodgy,Logan,Logan Mcv,Sandero,Ds3,Ds3 Cabriolet,Ds3 Executive,Ds4,Ds4 Crossback,Ds4 Crossback Executive,Ds4 Executive,Ds4 Nouvelle,Ds5,488 Gtb,488 Spider,California,F12 Berlinetta,Ff,Gtc4 Lusso,124 Spider,500 Serie 4,500c Serie 4,500l,500l Living,500x,Doblo,Doblo Panorama,Ducato Combi,Ducato Panorama,Fiorino Combi,Fiorino Panorama,Freemont,Panda,Punto Nouvelle,Qubo,Tipo,B-Max,C-Max,Ecosport,Edge,Fiesta,Focus,Focus Sw,Galaxy,Grand C-Max,Ka,Kuga,Mondeo,Mondeo Hybrid,Mondeo Sw,Mondeo Vignale,Mondeo Vignale Sw,Mustang Convertible,Mustang Fastback,S-Max,S-Max Vignale,Tourneo Connect,Tourneo Courier,Transit Kombi,Civic,Civic Tourer,Civic Type R,Cr-V,Hr-V,Jazz,Jazz 2016,Nsx,Genesis,I10,I20,I20 Coupe,I30,I30 Sw,I40,I40 Sw,Ix20,Ix35,Santa Fe,Tucson,Veloster,Q30,Q50,Q60 Cabriolet,Q60 Coupe,Q70,Qx30,Qx50,Qx70,F-Pace,F-Type,F-Type Coupe,Xe,Xf Nouvelle,Xj,Xk,Xkr,Cherokee,Grand Cherokee,Renegade,Wrangler,Carens,Ceed Nouvelle,Ceed Sw Nouvelle,Optima,Picanto Nouvelle,Pro_ceed Coupe Nouvelle,Pro_ceed Gt Coupe Nouvelle,Rio,Sorento,Soul,Soul Ev,Sportage,Venga,4x4,Granta,Priora,Priora Break,Aventador,Aventador Roadster,Huracan,Huracan Spyder,Ypsilon,Discovery,Discovery Sport,Freelander,Range Rover,Range Rover Evoque,Range Rover Evoque Cabriolet,Range Rover Evoque Coupe,Range Rover Sport,Ct,Gs,Is,Ls 460,Ls 600,Nx,Rc F,Rx,Elise,Evora,Exige,Exige Roadster,Ghibli,Grancabrio,Granturismo,Levante,Quattroporte,Cx-3,Cx-5,Mazda2,Mazda3,Mazda6,Mazda6 Fastwagon,Mx-5 Nouvelle,Mclaren 675lt,Mclaren Coupe 540c,Mclaren Coupe 570gt,Mclaren Coupe 570s,Mclaren Coupe 650s,Mclaren Spider 650s,Mclaren Spider 675lt,Amg Gt,Citan,Citan Tourer,Citan Tourer Professional,Classe A,Classe B,Classe C,Classe C Break,Classe C Coupe,Classe Cla,Classe Cla Nouveau,Classe Cla Shooting Brake,Classe Cla Shooting Brake Nouveau,Classe Cls,Classe Cls Shooting Brake,Classe E,Classe E Break,Classe E Cabriolet,Classe E Coupe,Classe G,Classe Gl,Classe Gla,Classe Glc,Classe Gle,Classe Gle Coupe,Classe Gls,Classe M,Classe S,Classe S Cabriolet,Classe S Coupe,Classe Sl,Classe Slc,Classe V,Marco Polo,Marco Polo Activity,Slk,Viano,Vito Tourer,3 Portes,5 Portes,Cabriolet,Clubman,Countryman,Paceman,Asx,I-Miev,Outlander,Pajero Court,Pajero Long,Space Star,370z Coupe 2016,370z Roadster 2016,E-Nv200 Evalia,E-Nv200 Evalia Flex,Evalia,Gt-R 2016,Juke 2016,Leaf 2016,Leaf Flex 2016,Micra,Note,Nv400 Combi,Pulsar Gamme 2016,Qashqai Gamme 2016,X-Trail,Adam,Adam Rocks,Antara,Astra,Astra Gtc,Astra Sports Tourer,Cascada,Combo Tour,Corsa,Gtc,Insignia,Insignia Country Tourer,Insignia Sports Tourer,Insignia Sports Tourer Opc,Karl,Meriva,Mokka,Vivaro Combi,Zafira Tourer,108,2008,208 Nouvelle,3008,308,308 Sw,4008,5008,508,508 Hybrid4,508 Rxh,508 Sw,Bipper Tepee,Boxer Combi,Expert Combi Nouveau,Ion,Partner Tepee,Traveller,718,911 Carrera Cabriolet,911 Carrera Coupe,911 Gt3,911 R,911 Targa,911 Turbo Cabriolet,911 Turbo Coupe,Boxster,Boxster Spyder,Cayenne,Cayman,Macan,Panamera,Panamera Gts,Captur,Clio,Clio Estate,Espace V,Grand Kangoo,Grand Scenic,Kadjar,Kangoo,Megane Coupe,Megane Estate,Megane Iv Berline,Scenic,Talisman,Talisman Estate,Trafic Combi,Twingo,Twizy,Zoe,Ghost,Phantom,Phantom Convertible,Phantom Coupe,Alhambra,Ateca,Ibiza,Ibiza Sc,Ibiza St,Leon,Leon Sc,Leon St,Leon X-Perience,Mii,Toledo,Citigo,Fabia,Fabia Combi,Octavia,Rapid,Rapid Spaceback,Superb,Superb Combi,Yeti,Forfour,Fortwo Cabrio,Fortwo Coupe,Actyon Sports,Korando,Rexton,Rodius,Tivoli,Brz,Forester,Levorg,Outback,Wrx Sti,Xv,Baleno,Celerio,Jimny,S-Cross,Swift My15,Swift Sport My15,Vitara,Model S,Auris Nouvelle,Auris Touring Sports Nouvelle,Avensis,Avensis Touring Sports,Aygo,Gt,Land Cruiser,Prius,Prius Rechargeable,Prius+,Rav4 Hybride,Rav4 Nouveau,Verso 2016,Yaris Hybride Lca 2016,Yaris Lca 2016,Caddy,Caddy Maxi,California,Caravelle,Cc,Coccinelle,Coccinelle Cabriolet,Cross Caddy,E-Golf,E-Up,Golf,Golf Cabriolet,Golf Sportsvan,Golf Sw,Jetta Hybrid,Multivan,Passat,Passat Sw,Polo,Scirocco,Sharan,Tiguan,Touareg,Touran Nouveau,Up!,S60,S90,V40,V40 Cross Country,V40 Cross Country Nouvelle,V40 Nouvelle,V60,V60 Cross Country,V90,Xc60,Xc90}
+
+    modele_{500 Abarth, 500c Abarth, Abarth 695 Biposto}:
+        marque: "@marque_Abarth"
+        modeleName: <current()>
+
+    modele_{4c, 4c Spider, Giulietta, Giulietta Serie 2, Mito}:
+        marque: "@marque_Alfa_Romeo"
+        modeleName: <current()>
+
+    modele_{Db9, Rapide, Vanquish, Vantage}:
+        marque: "@marque_Aston_Martin"
+        modeleName: <current()>
+
+    modele_{A1, A1 Sportback, A3, A3 Cabriolet, A3 Sportback, A4, A4 Allroad, A4 Allroad Quattro Nouvelle, A4 Avant Nouvelle, A5, A5 Cabriolet, A5 Sportback, A6, A6 Allroad Quattro, A6 Avant, A7 Sportback, A8, Q3, Q5, Q7 Nouveau, R8, Rs Q3 Nouveau, Rs3 Sportback, Rs6 Avant, Rs7 Sportback, S1, S1 Sportback, S3, S3 Berline, S3 Cabriolet, S3 Sportback, S5, S5 Cabriolet, S5 Sportback, S6, S6 Avant, S7 Sportback, S8, Sq5, Tt Coupe, Tt Roadster, Tts Coupe, Tts Roadster}:
+        marque: "@marque_Audi"
+        modeleName: <current()>
+
+    modele_{Bentayga, Continental Gt, Continental Gt3-R, Continental Gtc, Flying Spur, Mulsanne}:
+        marque: "@marque_Bentley"
+        modeleName: <current()>
+
+    modele_{I3, I8, M2 Coupe, M3, M4 Cabriolet, M4 Coupe, M5, M6 Cabriolet, M6 Coupe, M6 Gran Coupe, Serie 1 3 Portes, Serie 1 5 Portes, Serie 2 Active Tourer, Serie 2 Cabriolet, Serie 2 Coupe, Serie 2 Gran Tourer, Serie 3, Serie 3 Gt, Serie 3 Touring, Serie 4 Cabriolet, Serie 4 Coupe, Serie 4 Gran Coupe, Serie 5, Serie 5 Gt, Serie 5 Touring, Serie 6 Cabriolet, Serie 6 Coupe, Serie 6 Gran Coupe, Serie 7, X1, X3, X4, X5, X5 M, X6, X6 M, Z4}:
+        marque: "@marque_BMW"
+        modeleName: <current()>
+
+    modele_{Camaro, Camaro Cabriolet, Corvette, Corvette Cabriolet}:
+        marque: "@marque_Chevrolet"
+        modeleName: <current()>
+
+    modele_{Berlingo Multispace, C-Elysee, C-Zero, C1, C3, C3 Picasso, C4, C4 Aircross, C4 Cactus, C4 Picasso, C5, C5 Tourer, C5 Tourer Xtr, E-Mehari, Grand C4 Picasso, Jumper Combi, Jumpy Combi, Nemo, Spacetourer}:
+        marque: "@marque_Citroen"
+        modeleName: <current()>
+
+    modele_{Dokker, Duster, Lodgy, Logan, Logan Mcv, Sandero}:
+        marque: "@marque_Dacia"
+        modeleName: <current()>
+
+    modele_{Ds3, Ds3 Cabriolet, Ds3 Executive, Ds4, Ds4 Crossback, Ds4 Crossback Executive, Ds4 Executive, Ds4 Nouvelle, Ds5}:
+        marque: "@marque_DS"
+        modeleName: <current()>
+
+    modele_{488 Spider, California, F12 Berlinetta, Ff, Gtc4 Lusso}:
+        marque: "@marque_Ferrari"
+        modeleName: <current()>
+
+    modele_{124 Spider, 500 Serie 4, 500c Serie 4, 500l, 500l Living, 500x, Doblo, Doblo Panorama, Ducato Combi, Ducato Panorama, Fiorino Combi, Fiorino Panorama, Freemont, Panda, Punto Nouvelle, Qubo, Tipo}:
+        marque: "@marque_Fiat"
+        modeleName: <current()>
+
+    modele_{B-Max, C-Max, Ecosport, Edge, Fiesta, Focus, Focus Sw, Galaxy, Grand C-Max, Ka, Kuga, Mondeo, Mondeo Hybrid, Mondeo Sw, Mondeo Vignale, Mondeo Vignale Sw, Mustang Convertible, Mustang Fastback, S-Max, S-Max Vignale, Tourneo Connect, Tourneo Courier, Transit Kombi}:
+        marque: "@marque_Ford"
+        modeleName: <current()>
+
+    modele_{Civic, Civic Tourer, Civic Type R, Cr-V, Hr-V, Jazz, Jazz 2016, Nsx}:
+        marque: "@marque_Honda"
+        modeleName: <current()>
+
+    modele_{Genesis, I10, I20, I20 Coupe, I30, I30 Sw, I40, I40 Sw, Ix20, Ix35, Santa Fe, Tucson, Veloster}:
+        marque: "@marque_Hyundai"
+        modeleName: <current()>
+
+    modele_{Q30, Q50, Q60 Cabriolet, Q60 Coupe, Q70, Qx30, Qx50, Qx70}:
+        marque: "@marque_Infiniti"
+        modeleName: <current()>
+
+    modele_{F-Pace, F-Type, F-Type Coupe, Xe, Xf Nouvelle, Xj, Xk, Xkr}:
+        marque: "@marque_Jaguar"
+        modeleName: <current()>
+
+    modele_{Cherokee, Grand Cherokee, Renegade, Wrangler}:
+        marque: "@marque_Jeep"
+        modeleName: <current()>
+
+    modele_{Carens, Ceed Nouvelle, Ceed Sw Nouvelle, Optima, Picanto Nouvelle, Pro_ceed Coupe Nouvelle, Pro_ceed Gt Coupe Nouvelle, Rio, Sorento, Soul, Soul Ev, Sportage, Venga}:
+        marque: "@marque_Kia"
+        modeleName: <current()>
+
+    modele_{4x4, Granta, Priora, Priora Break}:
+        marque: "@marque_Lada"
+        modeleName: <current()>
+
+    modele_{Aventador, Aventador Roadster, Huracan, Huracan Spyder}:
+        marque: "@marque_Lamborghini"
+        modeleName: <current()>
+
+    modele_{Ypsilon}:
+        marque: "@marque_Lancia"
+        modeleName: <current()>
+
+    modele_{Discovery, Discovery Sport, Freelander, Range Rover, Range Rover Evoque, Range Rover Evoque Cabriolet, Range Rover Evoque Coupe, Range Rover Sport}:
+        marque: "@marque_Land_Rover"
+        modeleName: <current()>
+
+    modele_{Ct, Gs, Is, Ls 460, Ls 600, Nx, Rc F, Rx}:
+        marque: "@marque_Lexus"
+        modeleName: <current()>
+
+    modele_{Elise, Evora, Exige, Exige Roadster}:
+        marque: "@marque_Lotus"
+        modeleName: <current()>
+
+    modele_{Ghibli, Grancabrio, Granturismo, Levante, Quattroporte}:
+        marque: "@marque_Maserati"
+        modeleName: <current()>
+
+    modele_{Cx-3, Cx-5, Mazda2, Mazda3, Mazda6, Mazda6 Fastwagon, Mx-5 Nouvelle}:
+        marque: "@marque_Mazda"
+        modeleName: <current()>
+
+    modele_{Mclaren 675lt, Mclaren Coupe 540c, Mclaren Coupe 570gt, Mclaren Coupe 570s, Mclaren Coupe 650s, Mclaren Spider 650s, Mclaren Spider 675lt}:
+        marque: "@marque_Mclaren"
+        modeleName: <current()>
+
+    modele_{Amg Gt, Citan, Citan Tourer, Citan Tourer Professional, Classe A, Classe B, Classe C, Classe C Break, Classe C Coupe, Classe Cla, Classe Cla Nouveau, Classe Cla Shooting Brake, Classe Cla Shooting Brake Nouveau, Classe Cls, Classe Cls Shooting Brake, Classe E, Classe E Break, Classe E Cabriolet, Classe E Coupe, Classe G, Classe Gl, Classe Gla, Classe Glc, Classe Gle, Classe Gle Coupe, Classe Gls, Classe M, Classe S, Classe S Cabriolet, Classe S Coupe, Classe Sl, Classe Slc, Classe V, Marco Polo, Marco Polo Activity, Slk, Viano, Vito Tourer}:
+        marque: "@marque_Mercedes-Benz"
+        modeleName: <current()>
+
+    modele_{3 Portes, 5 Portes, Cabriolet, Clubman, Countryman, Paceman}:
+        marque: "@marque_Mini"
+        modeleName: <current()>
+
+    modele_{Asx, I-Miev, Outlander, Pajero Court, Pajero Long, Space Star}:
+        marque: "@marque_Mitsubishi"
+        modeleName: <current()>
+
+    modele_{370z Coupe 2016, 370z Roadster 2016, E-Nv200 Evalia, E-Nv200 Evalia Flex, Evalia, Gt-R 2016, Juke 2016, Leaf 2016, Leaf Flex 2016, Micra, Note, Nv400 Combi, Pulsar Gamme 2016, Qashqai Gamme 2016, X-Trail}:
+        marque: "@marque_Nissan"
+        modeleName: <current()>
+
+    modele_{Adam, Adam Rocks, Antara, Astra, Astra Gtc, Astra Sports Tourer, Cascada, Combo Tour, Corsa, Gtc, Insignia, Insignia Country Tourer, Insignia Sports Tourer, Insignia Sports Tourer Opc, Karl, Meriva, Mokka, Vivaro Combi, Zafira Tourer}:
+        marque: "@marque_Opel"
+        modeleName: <current()>
+
+    modele_{108, 2008, 208 Nouvelle, 3008, 308, 308 Sw, 4008, 5008, 508, 508 Hybrid4, 508 Rxh, 508 Sw, Bipper Tepee, Boxer Combi, Expert Combi Nouveau, Ion, Partner Tepee, Traveller, 718}:
+        marque: "@marque_Peugeot"
+        modeleName: <current()>
+
+    modele_{911 Carrera Cabriolet, 911 Carrera Coupe, 911 Gt3, 911 R, 911 Targa, 911 Turbo Cabriolet, 911 Turbo Coupe, Boxster, Boxster Spyder, Cayenne, Cayman, Macan, Panamera, Panamera Gts}:
+        marque: "@marque_Porsche"
+        modeleName: <current()>
+
+    modele_{Captur, Clio, Clio Estate, Espace V, Grand Kangoo, Grand Scenic, Kadjar, Kangoo, Megane Coupe, Megane Estate, Megane Iv Berline, Scenic, Talisman, Talisman Estate, Trafic Combi, Twingo, Twizy, Zoe}:
+        marque: "@marque_Renault"
+        modeleName: <current()>
+
+    modele_{Ghost, Phantom, Phantom Convertible, Phantom Coupe}:
+        marque: "@marque_Rolls_Royce"
+        modeleName: <current()>
+
+    modele_{Alhambra, Ateca, Ibiza, Ibiza Sc, Ibiza St, Leon, Leon Sc, Leon St, Leon X-Perience, Mii, Toledo}:
+        marque: "@marque_Seat"
+        modeleName: <current()>
+
+    modele_{Citigo, Fabia, Fabia Combi, Octavia, Rapid, Rapid Spaceback, Superb, Superb Combi, Yeti}:
+        marque: "@marque_Skoda"
+        modeleName: <current()>
+
+    modele_{Forfour, Fortwo Cabrio, Fortwo Coupe}:
+        marque: "@marque_Smart"
+        modeleName: <current()>
+
+    modele_{Actyon Sports, Korando, Rexton, Rodius, Tivoli}:
+        marque: "@marque_Ssangyong"
+        modeleName: <current()>
+
+    modele_{Brz, Forester, Levorg, Outback, Wrx Sti, Xv}:
+        marque: "@marque_Subaru"
+        modeleName: <current()>
+
+    modele_{Baleno, Celerio, Jimny, S-Cross, Swift My15, Swift Sport My15, Vitara}:
+        marque: "@marque_Suzuki"
+        modeleName: <current()>
+
+    modele_{Model S}:
+        marque: "@marque_Tesla"
+        modeleName: <current()>
+
+    modele_{Auris Nouvelle, Auris Touring Sports Nouvelle, Avensis, Avensis Touring Sports, Aygo, Gt, Land Cruiser, Prius, Prius Rechargeable, Prius+, Rav4 Hybride, Rav4 Nouveau, Verso 2016, Yaris Hybride Lca 2016, Yaris Lca 2016}:
+        marque: "@marque_Toyota"
+        modeleName: <current()>
+
+    modele_{Caddy, Caddy Maxi, California, Caravelle, Cc, Coccinelle, Coccinelle Cabriolet, Cross Caddy, E-Golf, E-Up, Golf, Golf Cabriolet, Golf Sportsvan, Golf Sw, Jetta Hybrid, Multivan, Passat, Passat Sw, Polo, Scirocco, Sharan, Tiguan, Touareg, Touran Nouveau, Up!}:
+        marque: "@marque_Volkswagen"
+        modeleName: <current()>
+
+    modele_{S60, S90, V40, V40 Cross Country, V40 Cross Country Nouvelle, V40 Nouvelle, V60, V60 Cross Country, V90, Xc60, Xc90}:
+        marque: "@marque_Volvo"
+        modeleName: <current()>

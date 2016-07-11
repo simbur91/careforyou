@@ -32,11 +32,9 @@ class Modele
      * @ORM\ManyToOne(targetEntity="Marque",inversedBy="modele")
      */
     private $marque;
-    /**
-     * @ORM\ManyToOne(targetEntity="Driver",inversedBy="modeleId")
-     *
-     */
-    private $driver;
+    
+
+
 
 
     /**

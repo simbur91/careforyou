@@ -65,6 +65,7 @@ class Coordonnees
     private $adressCountry;
 
 
+   
     /**
      * Constructor
      */

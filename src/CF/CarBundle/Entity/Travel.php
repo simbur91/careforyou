@@ -24,8 +24,7 @@ class Travel
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Driver",inversedBy="travel")
-     * @ORM\JoinColumn(name="driver_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Driver")
      *
      */
     private $driver;
@@ -76,27 +75,15 @@ class Travel
      * @ORM\ManyToMany(targetEntity="Users")
      */
     private $users;
-    /**
-
-     * @ORM\OneToMany(targetEntity="Comments", mappedBy="travel")
-     */
-    private $comments;
-
-    /**
-     * @ORM\OneToOne(targetEntity="Commande")
-     */
-    private $commande;
 
 
-
-
+  
     /**
      * Constructor
      */
     public function __construct()
     {
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -309,63 +296,5 @@ class Travel
     public function getUsers()
     {
         return $this->users;
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     *
-     * @return Travel
-     */
-    public function addComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     */
-    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * Set commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     *
-     * @return Travel
-     */
-    public function setCommande(\CF\CarBundle\Entity\Commande $commande = null)
-    {
-        $this->commande = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Get commande
-     *
-     * @return \CF\CarBundle\Entity\Commande
-     */
-    public function getCommande()
-    {
-        return $this->commande;
     }
 }

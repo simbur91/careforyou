@@ -70,12 +70,7 @@ class Driver
      * @ORM\Column(name="color_car", type="string", length=255)
      */
     private $colorCar;
-    /**
-     *
-     *
-     * @ORM\OneToMany(targetEntity="Travel",mappedBy="driver")
-     */
-    private $travel;
+    
     /**
      * @var int
      *
@@ -83,20 +78,8 @@ class Driver
      */
     private $noteMoyenne;
 
-    /**
-     *
-     * @ORM\OneToOne(targetEntity="Preferences",inversedBy="driver")
-     *
-     */
-    private $preferences;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    
 
     /**
      * Get id
@@ -274,63 +257,5 @@ class Driver
     public function getMarque()
     {
         return $this->Marque;
-    }
-
-    /**
-     * Add travel
-     *
-     * @param \CF\CarBundle\Entity\Travel $travel
-     *
-     * @return Driver
-     */
-    public function addTravel(\CF\CarBundle\Entity\Travel $travel)
-    {
-        $this->travel[] = $travel;
-
-        return $this;
-    }
-
-    /**
-     * Remove travel
-     *
-     * @param \CF\CarBundle\Entity\Travel $travel
-     */
-    public function removeTravel(\CF\CarBundle\Entity\Travel $travel)
-    {
-        $this->travel->removeElement($travel);
-    }
-
-    /**
-     * Get travel
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTravel()
-    {
-        return $this->travel;
-    }
-
-    /**
-     * Set preferences
-     *
-     * @param \CF\CarBundle\Entity\Preferences $preferences
-     *
-     * @return Driver
-     */
-    public function setPreferences(\CF\CarBundle\Entity\Preferences $preferences = null)
-    {
-        $this->preferences = $preferences;
-
-        return $this;
-    }
-
-    /**
-     * Get preferences
-     *
-     * @return \CF\CarBundle\Entity\Preferences
-     */
-    public function getPreferences()
-    {
-        return $this->preferences;
     }
 }

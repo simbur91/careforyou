@@ -22,13 +22,13 @@ class Commande
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Travel",mappedBy="commande")
+     * @ORM\OneToOne(targetEntity="Travel")
      */
     private $Trajet;
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="Users",inversedBy="commande")
+     * @ORM\OneToOne(targetEntity="Users")
      *
      */
     private $Users;
@@ -46,13 +46,7 @@ class Commande
      */
     private $statut;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->Trajet = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+
 
     /**
      * Get id
@@ -113,33 +107,23 @@ class Commande
     }
 
     /**
-     * Add trajet
+     * Set trajet
      *
      * @param \CF\CarBundle\Entity\Travel $trajet
      *
      * @return Commande
      */
-    public function addTrajet(\CF\CarBundle\Entity\Travel $trajet)
+    public function setTrajet(\CF\CarBundle\Entity\Travel $trajet = null)
     {
-        $this->Trajet[] = $trajet;
+        $this->Trajet = $trajet;
 
         return $this;
     }
 
     /**
-     * Remove trajet
-     *
-     * @param \CF\CarBundle\Entity\Travel $trajet
-     */
-    public function removeTrajet(\CF\CarBundle\Entity\Travel $trajet)
-    {
-        $this->Trajet->removeElement($trajet);
-    }
-
-    /**
      * Get trajet
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \CF\CarBundle\Entity\Travel
      */
     public function getTrajet()
     {

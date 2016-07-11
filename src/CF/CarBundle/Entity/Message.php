@@ -60,7 +60,6 @@ class Message
 
 
 
-
     /**
      * Get id
      *
