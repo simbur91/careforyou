@@ -1,0 +1,6 @@
+CF\CarBundle\Entity\Comments:
+    comments_{1..500}:
+            user: "@users_*"
+            travel: "@travel_*"
+            datePublication:  <dateTimeThisCentury($max = 'now')>
+            content:  <text($maxNbChars = 200)>

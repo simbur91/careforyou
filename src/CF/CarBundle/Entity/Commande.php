@@ -7,8 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Commande
  *
- * @ORM\Table(name="commande")
+ * @ORM\Table(name="commande", uniqueConstraints={@ORM\UniqueConstraint(name="trajet_unique", columns={"trajet_id", "users_id"})}))
  * @ORM\Entity(repositoryClass="CF\CarBundle\Repository\CommandeRepository")
+ * 
+ * 
  */
 class Commande
 {
@@ -22,26 +24,22 @@ class Commande
     private $id;
 
     /**
-     * @var int
-     * @ORM\OneToMany(targetEntity="Travel",mappedBy="commande")
-     * @ORM\JoinColumn(name="id_trajet", referencedColumnName="id")
-     * @ORM\Column(name="id_trajet", type="integer")
+     * @ORM\ManyToOne(targetEntity="Travel")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * 
+     * 
      */
-    private $Trajet;
+    private $trajet;
 
     /**
-     * @var int
-     * @ORM\OneToOne(targetEntity="Users",inversedBy="commande")
-     * @ORM\JoinColumn(name="id_users", referencedColumnName="id")
-     * @ORM\Column(name="id_users", type="integer")
-     */
-    private $Users;
-    /**
-     * @var string
      *
-     * @ORM\Column(name="validation", type="string", length=100)
+     * @ORM\ManyToOne(targetEntity="Users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * 
+     *
      */
-    private $validation;
+    private $users;
+
 
     /**
      * @var string
@@ -51,62 +49,17 @@ class Commande
     private $statut;
 
 
+
+   
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idTrajet
-     *
-     * @param integer $idTrajet
-     *
-     * @return Commande
-     */
-    public function setIdTrajet($idTrajet)
-    {
-        $this->idTrajet = $idTrajet;
-
-        return $this;
-    }
-
-    /**
-     * Get idTrajet
-     *
-     * @return int
-     */
-    public function getIdTrajet()
-    {
-        return $this->idTrajet;
-    }
-
-    /**
-     * Set validation
-     *
-     * @param string $validation
-     *
-     * @return Commande
-     */
-    public function setValidation($validation)
-    {
-        $this->validation = $validation;
-
-        return $this;
-    }
-
-    /**
-     * Get validation
-     *
-     * @return string
-     */
-    public function getValidation()
-    {
-        return $this->validation;
     }
 
     /**
@@ -132,32 +85,17 @@ class Commande
     {
         return $this->statut;
     }
-    /**
-     * @var integer
-     */
-    private $idCommande;
-
-
-    /**
-     * Get idCommande
-     *
-     * @return integer
-     */
-    public function getIdCommande()
-    {
-        return $this->idCommande;
-    }
 
     /**
      * Set trajet
      *
-     * @param integer $trajet
+     * @param \CF\CarBundle\Entity\Travel $trajet
      *
      * @return Commande
      */
-    public function setTrajet($trajet)
+    public function setTrajet(\CF\CarBundle\Entity\Travel $trajet = null)
     {
-        $this->Trajet = $trajet;
+        $this->trajet = $trajet;
 
         return $this;
     }
@@ -165,23 +103,23 @@ class Commande
     /**
      * Get trajet
      *
-     * @return integer
+     * @return \CF\CarBundle\Entity\Travel
      */
     public function getTrajet()
     {
-        return $this->Trajet;
+        return $this->trajet;
     }
 
     /**
      * Set users
      *
-     * @param integer $users
+     * @param \CF\CarBundle\Entity\Users $users
      *
      * @return Commande
      */
-    public function setUsers($users)
+    public function setUsers(\CF\CarBundle\Entity\Users $users = null)
     {
-        $this->Users = $users;
+        $this->users = $users;
 
         return $this;
     }
@@ -189,10 +127,10 @@ class Commande
     /**
      * Get users
      *
-     * @return integer
+     * @return \CF\CarBundle\Entity\Users
      */
     public function getUsers()
     {
-        return $this->Users;
+        return $this->users;
     }
 }

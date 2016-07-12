@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block section %}
     <h1>Travel list</h1>
 
     <table>
@@ -22,7 +22,7 @@
         {% for travel in travels %}
             <tr>
                 <td><a href="{{ path('travel_show', { 'id': travel.id }) }}">{{ travel.id }}</a></td>
-                <td>{{ travel.driverId }}</td>
+               <td>{{ travel.driverId.id }}</td>
                 <td>{{ travel.cityDeparture }}</td>
                 <td>{{ travel.cityFinish }}</td>
                 <td>{{ travel.placeFree }}</td>

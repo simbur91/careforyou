@@ -1,0 +1,7 @@
+CF\CarBundle\Entity\Info_Banq:
+    infobanq_{1..200}:
+           iban:  <iban($countryCode='BE')>
+           statut:  <statut()>
+           bic: <swiftBicNumber()>
+           institution: <word()>
+           user (unique):  "@users_*"

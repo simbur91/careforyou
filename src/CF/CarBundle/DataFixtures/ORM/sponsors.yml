@@ -1,0 +1,5 @@
+CF\CarBundle\Entity\Sponsors:
+    sponsors_{1..50}:
+        lot:  <text($maxNbChars = 200)>
+        description: <text($maxNbChars = 200)>
+        competition:  ["@competition_*"]

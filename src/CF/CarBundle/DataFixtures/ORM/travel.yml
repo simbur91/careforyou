@@ -1,0 +1,10 @@
+CF\CarBundle\Entity\Travel:
+    travel_{1...100}:
+        driver:  "@driver_*"
+        cityDeparture:  <city()>
+        cityFinish: <city()>
+        placeFree: <numberBetween($min=0, $max=5)
+        price:  <randomDigitNotNull()>
+        distance: <numberBetween($min=10, $max=100)
+        itinary:  <imageUrl($width = 640, $height = 480)>
+        users:  "3x @users_*"

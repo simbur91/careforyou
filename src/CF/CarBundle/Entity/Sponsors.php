@@ -36,17 +36,24 @@ class Sponsors
     private $description;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="competition_id", type="integer")
+     * @ORM\OneToMany(targetEntity="Competition",mappedBy="sponsors")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
-    private $competitionId;
+    private $competition;
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->competition = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -102,70 +109,36 @@ class Sponsors
     }
 
     /**
-     * Set competitionId
+     * Add competition
      *
-     * @param integer $competitionId
+     * @param \CF\CarBundle\Entity\Competition $competition
      *
      * @return Sponsors
      */
-    public function setCompetitionId($competitionId)
+    public function addCompetition(\CF\CarBundle\Entity\Competition $competition)
     {
-        $this->competitionId = $competitionId;
+        $this->competition[] = $competition;
 
         return $this;
     }
 
     /**
-     * Get competitionId
+     * Remove competition
      *
-     * @return int
+     * @param \CF\CarBundle\Entity\Competition $competition
      */
-    public function getCompetitionId()
+    public function removeCompetition(\CF\CarBundle\Entity\Competition $competition)
     {
-        return $this->competitionId;
-    }
-    /**
-     * @var integer
-     */
-    private $idSponsors;
-
-    /**
-     * @var \CF\CarBundle\Entity\Competition
-     */
-    private $idCompetition;
-
-
-    /**
-     * Get idSponsors
-     *
-     * @return integer
-     */
-    public function getIdSponsors()
-    {
-        return $this->idSponsors;
+        $this->competition->removeElement($competition);
     }
 
     /**
-     * Set idCompetition
+     * Get competition
      *
-     * @param \CF\CarBundle\Entity\Competition $idCompetition
-     *
-     * @return Sponsors
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setIdCompetition(\CF\CarBundle\Entity\Competition $idCompetition = null)
+    public function getCompetition()
     {
-        $this->idCompetition = $idCompetition;
-
-        return $this;
-    }
-
-    /**
-     * Get idCompetition
-     *
-     * @return \CF\CarBundle\Entity\Competition
-     */
-    public function getIdCompetition()
-    {
-        return $this->idCompetition;
+        return $this->competition;
     }
 }

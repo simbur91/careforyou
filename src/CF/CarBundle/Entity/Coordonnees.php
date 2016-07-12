@@ -22,10 +22,7 @@ class Coordonnees
     private $id;
 
     /**
-     * @var int
      * @ORM\OneToMany(targetEntity="Users",mappedBy="coordonnees")
-     * @ORM\JoinColumn(name="id_users", referencedColumnName="id")
-     * @ORM\Column(name="id_users", type="integer")
      */
     private $users;
 
@@ -65,38 +62,23 @@ class Coordonnees
     private $adressCountry;
 
 
+   
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idUsers
-     *
-     * @param integer $idUsers
-     *
-     * @return Coordonnees
-     */
-    public function setUsers($Users)
-    {
-        $this->users = $Users;
-
-        return $this;
-    }
-
-    /**
-     * Get idUsers
-     *
-     * @return int
-     */
-    public function geUsers()
-    {
-        return $this->users;
     }
 
     /**
@@ -140,7 +122,7 @@ class Coordonnees
     /**
      * Get adressNum
      *
-     * @return int
+     * @return integer
      */
     public function getAdressNum()
     {
@@ -218,15 +200,35 @@ class Coordonnees
     {
         return $this->adressCountry;
     }
-    public function __construct()
+
+    /**
+     * Add user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     *
+     * @return Coordonnees
+     */
+    public function addUser(\CF\CarBundle\Entity\Users $user)
     {
-        $this->users = new ArrayCollection();
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \CF\CarBundle\Entity\Users $user
+     */
+    public function removeUser(\CF\CarBundle\Entity\Users $user)
+    {
+        $this->users->removeElement($user);
     }
 
     /**
      * Get users
      *
-     * @return integer
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUsers()
     {

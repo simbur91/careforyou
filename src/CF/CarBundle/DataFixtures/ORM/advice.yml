@@ -1,0 +1,7 @@
+CF\CarBundle\Entity\Advice:
+    advice:
+        user: "@user_*"
+        driver: "@driver_*"
+        content:  <realText($maxNbChars = 200, $indexSize = 2)>
+        evaluation: <numberBetween($min=0,$max=5)>
+

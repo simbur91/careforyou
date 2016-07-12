@@ -27,12 +27,15 @@ class Competition
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+    
 
+
+   
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -62,19 +65,28 @@ class Competition
     {
         return $this->name;
     }
-    /**
-     * @var integer
-     */
-    private $idCompetition;
-
 
     /**
-     * Get idCompetition
+     * Set sponsors
      *
-     * @return integer
+     * @param \CF\CarBundle\Entity\Sponsors $sponsors
+     *
+     * @return Competition
      */
-    public function getIdCompetition()
+    public function setSponsors(\CF\CarBundle\Entity\Sponsors $sponsors = null)
     {
-        return $this->idCompetition;
+        $this->sponsors = $sponsors;
+
+        return $this;
+    }
+
+    /**
+     * Get sponsors
+     *
+     * @return \CF\CarBundle\Entity\Sponsors
+     */
+    public function getSponsors()
+    {
+        return $this->sponsors;
     }
 }

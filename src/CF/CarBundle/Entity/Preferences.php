@@ -22,11 +22,11 @@ class Preferences
     private $id;
 
     /**
-     * @var int
-     * @ORM\OneToMany(targetEntity="Users", mappedBy="preferencesId")
-     * @ORM\Column(name="users_id", type="integer")
+     *
+     * @ORM\OneToOne(targetEntity="Driver")
+     *
      */
-    private $Users;
+    private $driver;
 
     /**
      * @var bool
@@ -71,16 +71,16 @@ class Preferences
     private $rayon;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="horaire_aller", type="datetime")
+     * @ORM\Column(name="horaire_aller", type="string", length=200)
      */
     private $horaireAller;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="horaire_retour", type="datetime")
+     * @ORM\Column(name="horaire_retour", type="string", length=200)
      */
     private $horaireRetour;
 
@@ -92,16 +92,17 @@ class Preferences
     private $confort;
 
 
+   
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
-
 
     /**
      * Set animal
@@ -120,7 +121,7 @@ class Preferences
     /**
      * Get animal
      *
-     * @return bool
+     * @return boolean
      */
     public function getAnimal()
     {
@@ -144,7 +145,7 @@ class Preferences
     /**
      * Get smoker
      *
-     * @return bool
+     * @return boolean
      */
     public function getSmoker()
     {
@@ -168,7 +169,7 @@ class Preferences
     /**
      * Get talker
      *
-     * @return bool
+     * @return boolean
      */
     public function getTalker()
     {
@@ -216,7 +217,7 @@ class Preferences
     /**
      * Get food
      *
-     * @return bool
+     * @return boolean
      */
     public function getFood()
     {
@@ -312,78 +313,34 @@ class Preferences
     /**
      * Get confort
      *
-     * @return int
+     * @return integer
      */
     public function getConfort()
     {
         return $this->confort;
     }
-    /**
-     * @var integer
-     */
-    private $idPreferences;
 
     /**
-     * @var \CF\CarBundle\Entity\Travel
-     */
-    private $idTravel;
-
-
-    /**
-     * Get idPreferences
+     * Set driver
      *
-     * @return integer
-     */
-    public function getIdPreferences()
-    {
-        return $this->idPreferences;
-    }
-
-    /**
-     * Set idTravel
-     *
-     * @param \CF\CarBundle\Entity\Travel $idTravel
+     * @param \CF\CarBundle\Entity\Driver $driver
      *
      * @return Preferences
      */
-    public function setIdTravel(\CF\CarBundle\Entity\Travel $idTravel = null)
+    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
     {
-        $this->idTravel = $idTravel;
+        $this->driver = $driver;
 
         return $this;
     }
 
     /**
-     * Get idTravel
+     * Get driver
      *
-     * @return \CF\CarBundle\Entity\Travel
+     * @return \CF\CarBundle\Entity\Driver
      */
-    public function getIdTravel()
+    public function getDriver()
     {
-        return $this->idTravel;
-    }
-
-    /**
-     * Set users
-     *
-     * @param integer $users
-     *
-     * @return Preferences
-     */
-    public function setUsers($users)
-    {
-        $this->Users = $users;
-
-        return $this;
-    }
-
-    /**
-     * Get users
-     *
-     * @return integer
-     */
-    public function getUsers()
-    {
-        return $this->Users;
+        return $this->driver;
     }
 }

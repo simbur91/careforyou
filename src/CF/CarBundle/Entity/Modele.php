@@ -29,23 +29,18 @@ class Modele
     private $modeleName;
 
     /**
-     * @var int
      * @ORM\ManyToOne(targetEntity="Marque",inversedBy="modele")
-     * @ORM\JoinColumn(name="marque_id", referencedColumnName="id")
-     * @ORM\Column(name="marque_id", type="integer")
      */
-    private $marqueId;
-    /**
-* @ORM\ManyToOne(targetEntity="Driver",inversedBy="modeleId")
-     *
-     */
-    private  $driver;
+    private $marque;
+    
+
+
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -77,56 +72,27 @@ class Modele
     }
 
     /**
-     * Set marqueId
+     * Set marque
      *
-     * @param integer $marqueId
+     * @param \CF\CarBundle\Entity\Marque $marque
      *
      * @return Modele
      */
-    public function setMarqueId($marqueId)
+    public function setMarque(\CF\CarBundle\Entity\Marque $marque = null)
     {
-        $this->marqueId = $marqueId;
+        $this->marque = $marque;
 
         return $this;
     }
 
     /**
-     * Get marqueId
+     * Get marque
      *
-     * @return int
+     * @return \CF\CarBundle\Entity\Marque
      */
-    public function getMarqueId()
+    public function getMarque()
     {
-        return $this->marqueId;
-    }
-    /**
-     * @var integer
-     */
-    private $idMarque;
-
-
-    /**
-     * Set idMarque
-     *
-     * @param integer $idMarque
-     *
-     * @return Modele
-     */
-    public function setIdMarque($idMarque)
-    {
-        $this->idMarque = $idMarque;
-
-        return $this;
-    }
-
-    /**
-     * Get idMarque
-     *
-     * @return integer
-     */
-    public function getIdMarque()
-    {
-        return $this->idMarque;
+        return $this->marque;
     }
 
     /**

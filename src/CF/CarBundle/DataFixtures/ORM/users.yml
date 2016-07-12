@@ -1,0 +1,13 @@
+CF\CarBundle\Entity\Users:
+    users_{1..200}:
+        firstname:  <firstname()>
+        lastname: <lastname()>
+        email:  <email()>
+        emailsecu:  <safeEmail()>
+        tel:  <phoneNumber()>
+        birthdate:  <date($format = 'Y-m-d', $max = '1998-01-01')>
+        password:  <password()>
+        admin:  <boolean()>
+        langage:  <languageCode()>
+        sexe:  <title($gender = null|'male'|'female')>
+        login (unique):  <userName()>

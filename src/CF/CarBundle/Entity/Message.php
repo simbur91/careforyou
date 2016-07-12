@@ -43,26 +43,22 @@ class Message
     private $content;
 
     /**
-     * @var int
      * @ORM\ManyToOne(targetEntity="Users",inversedBy="message")
-     * @ORM\JoinColumn(name="recipient_id", referencedColumnName="id")
-     * @ORM\Column(name="recipient_id", type="integer")
      */
     private $recipientId;
 
     /**
-     * @var int
+     
      * @ORM\ManyToOne(targetEntity="Users",inversedBy="messagesend")
-     * @ORM\JoinColumn(name="sender_id", referencedColumnName="id")
-     * @ORM\Column(name="sender_id", type="integer")
      */
     private $senderId;
+
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -158,7 +154,7 @@ class Message
     /**
      * Get recipientId
      *
-     * @return int
+     * @return integer
      */
     public function getRecipientId()
     {
@@ -182,112 +178,10 @@ class Message
     /**
      * Get senderId
      *
-     * @return int
+     * @return integer
      */
     public function getSenderId()
     {
         return $this->senderId;
-    }
-    /**
-     * @var string
-     */
-    private $subject;
-
-    /**
-     * @var integer
-     */
-    private $idMessage;
-
-    /**
-     * @var \CF\CarBundle\Entity\Users
-     */
-    private $idSender;
-
-    /**
-     * @var \CF\CarBundle\Entity\Users
-     */
-    private $idRecipient;
-
-
-    /**
-     * Set subject
-     *
-     * @param string $subject
-     *
-     * @return Message
-     */
-    public function setSubject($subject)
-    {
-        $this->subject = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Get subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * Get idMessage
-     *
-     * @return integer
-     */
-    public function getIdMessage()
-    {
-        return $this->idMessage;
-    }
-
-    /**
-     * Set idSender
-     *
-     * @param \CF\CarBundle\Entity\Users $idSender
-     *
-     * @return Message
-     */
-    public function setIdSender(\CF\CarBundle\Entity\Users $idSender = null)
-    {
-        $this->idSender = $idSender;
-
-        return $this;
-    }
-
-    /**
-     * Get idSender
-     *
-     * @return \CF\CarBundle\Entity\Users
-     */
-    public function getIdSender()
-    {
-        return $this->idSender;
-    }
-
-    /**
-     * Set idRecipient
-     *
-     * @param \CF\CarBundle\Entity\Users $idRecipient
-     *
-     * @return Message
-     */
-    public function setIdRecipient(\CF\CarBundle\Entity\Users $idRecipient = null)
-    {
-        $this->idRecipient = $idRecipient;
-
-        return $this;
-    }
-
-    /**
-     * Get idRecipient
-     *
-     * @return \CF\CarBundle\Entity\Users
-     */
-    public function getIdRecipient()
-    {
-        return $this->idRecipient;
     }
 }

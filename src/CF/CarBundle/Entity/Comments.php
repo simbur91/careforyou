@@ -22,18 +22,12 @@ class Comments
     private $id;
 
     /**
-     * @var int
-     * @ORM\ManyToOne(targetEntity="Users",inversedBy="comments")
-     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * @ORM\Column(name="id_user", type="integer")
+     * @ORM\ManyToOne(targetEntity="Users")
      */
     private $user;
 
     /**
-     * @var int
-     * @ORM\ManyToOne(targetEntity="Travel",inversedBy="comments")
-     * @ORM\JoinColumn(name="id_trajet", referencedColumnName="id")
-     * @ORM\Column(name="id_travel", type="integer")
+     * @ORM\ManyToOne(targetEntity="Travel")
      */
     private $travel;
 
@@ -52,62 +46,16 @@ class Comments
     private $content;
 
 
+   
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idUser
-     *
-     * @param integer $idUser
-     *
-     * @return Comments
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    /**
-     * Get idUser
-     *
-     * @return int
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * Set idTravel
-     *
-     * @param integer $idTravel
-     *
-     * @return Comments
-     */
-    public function setIdTravel($idTravel)
-    {
-        $this->idTravel = $idTravel;
-
-        return $this;
-    }
-
-    /**
-     * Get idTravel
-     *
-     * @return int
-     */
-    public function getIdTravel()
-    {
-        return $this->idTravel;
     }
 
     /**
@@ -157,88 +105,15 @@ class Comments
     {
         return $this->content;
     }
-    /**
-     * @var string
-     */
-    private $commentsContent;
-
-    /**
-     * @var integer
-     */
-    private $idComment;
-
-    /**
-     * @var \CF\CarBundle\Entity\Users
-     */
-    private $idUsers;
-
-
-    /**
-     * Set commentsContent
-     *
-     * @param string $commentsContent
-     *
-     * @return Comments
-     */
-    public function setCommentsContent($commentsContent)
-    {
-        $this->commentsContent = $commentsContent;
-
-        return $this;
-    }
-
-    /**
-     * Get commentsContent
-     *
-     * @return string
-     */
-    public function getCommentsContent()
-    {
-        return $this->commentsContent;
-    }
-
-    /**
-     * Get idComment
-     *
-     * @return integer
-     */
-    public function getIdComment()
-    {
-        return $this->idComment;
-    }
-
-    /**
-     * Set idUsers
-     *
-     * @param \CF\CarBundle\Entity\Users $idUsers
-     *
-     * @return Comments
-     */
-    public function setIdUsers(\CF\CarBundle\Entity\Users $idUsers = null)
-    {
-        $this->idUsers = $idUsers;
-
-        return $this;
-    }
-
-    /**
-     * Get idUsers
-     *
-     * @return \CF\CarBundle\Entity\Users
-     */
-    public function getIdUsers()
-    {
-        return $this->idUsers;
-    }
 
     /**
      * Set user
      *
-     * @param integer $user
+     * @param \CF\CarBundle\Entity\Users $user
      *
      * @return Comments
      */
-    public function setUser($user)
+    public function setUser(\CF\CarBundle\Entity\Users $user = null)
     {
         $this->user = $user;
 
@@ -248,7 +123,7 @@ class Comments
     /**
      * Get user
      *
-     * @return integer
+     * @return \CF\CarBundle\Entity\Users
      */
     public function getUser()
     {
@@ -258,11 +133,11 @@ class Comments
     /**
      * Set travel
      *
-     * @param integer $travel
+     * @param \CF\CarBundle\Entity\Travel $travel
      *
      * @return Comments
      */
-    public function setTravel($travel)
+    public function setTravel(\CF\CarBundle\Entity\Travel $travel = null)
     {
         $this->travel = $travel;
 
@@ -272,7 +147,7 @@ class Comments
     /**
      * Get travel
      *
-     * @return integer
+     * @return \CF\CarBundle\Entity\Travel
      */
     public function getTravel()
     {

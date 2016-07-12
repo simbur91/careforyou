@@ -57,9 +57,9 @@ class Users
     private $tel;
 
     /**
-     * @var \DateTime
+     * @var  string
      *
-     * @ORM\Column(name="birthdate", type="date")
+     * @ORM\Column(name="birthdate", type="string", length=255)
      */
     private $birthdate;
 
@@ -90,46 +90,43 @@ class Users
      * @ORM\Column(name="sexe", type="string", length=10)
      */
     private $sexe;
-
-    /**
-     * @var bool
-     * @ORM\OneToOne(targetEntity="Driver")
-     * @ORM\Column(name="driver", type="boolean")
-     */
-    private $driver;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="preferences_id", type="integer")
-     * @ORM\OneToOne(targetEntity="Preferences")
-     * @ORM\JoinColumn(name="preferences_id", referencedColumnName="id")
-     */
-    private $preferencesId;
-    /**
-    * @ORM\OneToMany(targetEntity="Comments",mappedBy="user")
-    */
-    private $comments;
-    /**
-     * @ORM\OneToMany(targetEntity="Commande",mappedBy="user")
-     */
-    private $commande;
+  
     /**
      * @ORM\OneToOne(targetEntity="Coordonnees",mappedBy="users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $coordonnees;
     /**
      * @ORM\OneToMany(targetEntity="Message",mappedBy="senderId")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $message;
     /**
      * @ORM\OneToMany(targetEntity="Message",mappedBy="recipientId")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $messagesend;
+
+    /**
+     * @var string
+     * @ORM\Column(name="login", type="string", length=255)
+     */
+    private $login;
+
+   
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->message = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -255,34 +252,11 @@ class Users
     {
         return $this->tel;
     }
-    /**
-     * Set preferencesId
-     *
-     * @param integer $preferencesId
-     *
-     * @return Driver
-     */
-    public function setPreferencesId($preferencesId)
-    {
-        $this->preferencesId = $preferencesId;
-
-        return $this;
-    }
-
-    /**
-     * Get preferencesId
-     *
-     * @return int
-     */
-    public function getPreferencesId()
-    {
-        return $this->preferencesId;
-    }
 
     /**
      * Set birthdate
      *
-     * @param \DateTime $birthdate
+     * @param string $birthdate
      *
      * @return Users
      */
@@ -296,7 +270,7 @@ class Users
     /**
      * Get birthdate
      *
-     * @return \DateTime
+     * @return string
      */
     public function getBirthdate()
     {
@@ -344,7 +318,7 @@ class Users
     /**
      * Get admin
      *
-     * @return bool
+     * @return boolean
      */
     public function getAdmin()
     {
@@ -400,107 +374,6 @@ class Users
     }
 
     /**
-     * Set driver
-     *
-     * @param boolean $driver
-     *
-     * @return Users
-     */
-    public function setDriver($driver)
-    {
-        $this->driver = $driver;
-
-        return $this;
-    }
-
-    /**
-     * Get driver
-     *
-     * @return bool
-     */
-    public function getDriver()
-    {
-        return $this->driver;
-    }
-    /**
-     * @var string
-     */
-    private $mobile;
-
-    /**
-     * @var string
-     */
-    private $language;
-
-    /**
-     * @var string
-     */
-    private $login;
-
-
-    /**
-     * Set mobile
-     *
-     * @param string $mobile
-     *
-     * @return Users
-     */
-    public function setMobile($mobile)
-    {
-        $this->mobile = $mobile;
-
-        return $this;
-    }
-
-    /**
-     * Get mobile
-     *
-     * @return string
-     */
-    public function getMobile()
-    {
-        return $this->mobile;
-    }
-
-    /**
-     * Set language
-     *
-     * @param string $language
-     *
-     * @return Users
-     */
-    public function setLanguage($language)
-    {
-        $this->language = $language;
-
-        return $this;
-    }
-
-    /**
-     * Get language
-     *
-     * @return string
-     */
-    public function getLanguage()
-    {
-        return $this->language;
-    }
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     *
-     * @return Users
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
      * Set login
      *
      * @param string $login
@@ -522,84 +395,6 @@ class Users
     public function getLogin()
     {
         return $this->login;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->message = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     *
-     * @return Users
-     */
-    public function addComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \CF\CarBundle\Entity\Comments $comment
-     */
-    public function removeComment(\CF\CarBundle\Entity\Comments $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    /**
-     * Add commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     *
-     * @return Users
-     */
-    public function addCommande(\CF\CarBundle\Entity\Commande $commande)
-    {
-        $this->commande[] = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Remove commande
-     *
-     * @param \CF\CarBundle\Entity\Commande $commande
-     */
-    public function removeCommande(\CF\CarBundle\Entity\Commande $commande)
-    {
-        $this->commande->removeElement($commande);
-    }
-
-    /**
-     * Get commande
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCommande()
-    {
-        return $this->commande;
     }
 
     /**

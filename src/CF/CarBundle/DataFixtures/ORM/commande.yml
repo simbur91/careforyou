@@ -1,0 +1,5 @@
+CF\CarBundle\Entity\Commande:
+    commande_{1..100}:
+            trajet: "@travel_*"
+            users:  "@users_*"
+            statut: <statut()>

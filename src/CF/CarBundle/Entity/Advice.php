@@ -19,23 +19,23 @@ class Advice
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $idAdvice;
+    private $id;
 
     /**
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Users")
-     * @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * @ORM\Column(name="id_user", type="integer")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     *
      */
-    private $idUser;
+    private $User;
 
     /**
-     * @var int
+     *
      * @ORM\OneToOne(targetEntity="Driver")
-     * @ORM\JoinColumn(name="id_driver", referencedColumnName="id")
-     * @ORM\Column(name="id_driver", type="integer")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     *
      */
-    private $idDriver;
+    private $driver;
 
     /**
      * @var string
@@ -49,65 +49,19 @@ class Advice
      *
      * @ORM\Column(name="evaluation", type="integer")
      */
+
     private $evaluation;
+
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set idUser
-     *
-     * @param integer $idUser
-     *
-     * @return Advice
-     */
-    public function setIdUser($idUser)
-    {
-        $this->idUser = $idUser;
-
-        return $this;
-    }
-
-    /**
-     * Get idUser
-     *
-     * @return int
-     */
-    public function getIdUser()
-    {
-        return $this->idUser;
-    }
-
-    /**
-     * Set idDriver
-     *
-     * @param integer $idDriver
-     *
-     * @return Advice
-     */
-    public function setIdDriver($idDriver)
-    {
-        $this->idDriver = $idDriver;
-
-        return $this;
-    }
-
-    /**
-     * Get idDriver
-     *
-     * @return int
-     */
-    public function getIdDriver()
-    {
-        return $this->idDriver;
     }
 
     /**
@@ -151,7 +105,7 @@ class Advice
     /**
      * Get evaluation
      *
-     * @return int
+     * @return integer
      */
     public function getEvaluation()
     {
@@ -159,12 +113,50 @@ class Advice
     }
 
     /**
-     * Get idAdvice
+     * Set user
      *
-     * @return integer
+     * @param \CF\CarBundle\Entity\Users $user
+     *
+     * @return Advice
      */
-    public function getIdAdvice()
+    public function setUser(\CF\CarBundle\Entity\Users $user = null)
     {
-        return $this->idAdvice;
+        $this->User = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \CF\CarBundle\Entity\Users
+     */
+    public function getUser()
+    {
+        return $this->User;
+    }
+
+    /**
+     * Set driver
+     *
+     * @param \CF\CarBundle\Entity\Driver $driver
+     *
+     * @return Advice
+     */
+    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
+    {
+        $this->driver = $driver;
+
+        return $this;
+    }
+
+    /**
+     * Get driver
+     *
+     * @return \CF\CarBundle\Entity\Driver
+     */
+    public function getDriver()
+    {
+        return $this->driver;
     }
 }

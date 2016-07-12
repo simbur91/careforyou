@@ -1,0 +1,9 @@
+CF\CarBundle\Entity\Driver:
+    driver_{1..100}:
+        modele: "@modele_*"
+        user (unique): "@users_*"
+        marque: "@marque_*"
+        place:  <numberBetween($min=1, $max=5)>
+        colorCar:  <colorName()>
+        noteMoyenne:  <numberBetween($min=1, $max=5)>
+
