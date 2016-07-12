@@ -51,6 +51,7 @@ class Info_Banq
 
     /**
      * @ORM\OneToOne(targetEntity="Users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $user;
 

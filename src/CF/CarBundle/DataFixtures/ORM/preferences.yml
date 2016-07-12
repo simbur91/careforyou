@@ -1,0 +1,12 @@
+CF\CarBundle\Entity\Preferences:
+    preferences_{1..50}:
+        driver (unique): "@driver_*"
+        animal: <boolean()>
+        smoker: <boolean()>
+        talker: <boolean()>
+        musique: <boolean()>
+        food: <boolean()>
+        rayon:  <numberBetween($min=5, $max=60)>
+        horaireAller: <time($format = 'H:i:s', $max = 'now')>
+        horaireRetour:  <time($format = 'H:i:s', $max = 'now')>
+        confort: <numberBetween($min=1, $max=5)>

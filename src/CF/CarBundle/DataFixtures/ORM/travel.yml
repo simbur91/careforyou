@@ -7,4 +7,4 @@ CF\CarBundle\Entity\Travel:
         price:  <randomDigitNotNull()>
         distance: <numberBetween($min=10, $max=100)
         itinary:  <imageUrl($width = 640, $height = 480)>
-        users:  "3x @user_*"
+        users:  "3x @users_*"

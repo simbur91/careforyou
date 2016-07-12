@@ -1,0 +1,7 @@
+CF\CarBundle\Entity\Message:
+    message_{1..100}:
+          dateMessage:  <dateTimeThisCentury($max = 'now')>
+          sujet:  <text($maxNbChars = 200)>
+          content:  <text($maxNbChars = 200)>
+          recipientId: "@users_*"
+          senderId: "@users_*"

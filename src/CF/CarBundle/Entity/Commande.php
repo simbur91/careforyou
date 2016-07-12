@@ -23,21 +23,21 @@ class Commande
 
     /**
      * @ORM\OneToOne(targetEntity="Travel")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * 
+     * 
      */
-    private $Trajet;
+    private $trajet;
 
     /**
      *
      * @ORM\OneToOne(targetEntity="Users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
+     * 
      *
      */
-    private $Users;
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="validation", type="string", length=100)
-     */
-    private $validation;
+    private $users;
+
 
     /**
      * @var string
@@ -48,6 +48,8 @@ class Commande
 
 
 
+   
+
     /**
      * Get id
      *
@@ -56,30 +58,6 @@ class Commande
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set validation
-     *
-     * @param string $validation
-     *
-     * @return Commande
-     */
-    public function setValidation($validation)
-    {
-        $this->validation = $validation;
-
-        return $this;
-    }
-
-    /**
-     * Get validation
-     *
-     * @return string
-     */
-    public function getValidation()
-    {
-        return $this->validation;
     }
 
     /**
@@ -115,7 +93,7 @@ class Commande
      */
     public function setTrajet(\CF\CarBundle\Entity\Travel $trajet = null)
     {
-        $this->Trajet = $trajet;
+        $this->trajet = $trajet;
 
         return $this;
     }
@@ -127,7 +105,7 @@ class Commande
      */
     public function getTrajet()
     {
-        return $this->Trajet;
+        return $this->trajet;
     }
 
     /**
@@ -139,7 +117,7 @@ class Commande
      */
     public function setUsers(\CF\CarBundle\Entity\Users $users = null)
     {
-        $this->Users = $users;
+        $this->users = $users;
 
         return $this;
     }
@@ -151,6 +129,6 @@ class Commande
      */
     public function getUsers()
     {
-        return $this->Users;
+        return $this->users;
     }
 }

@@ -25,6 +25,7 @@ class Travel
     /**
      *
      * @ORM\ManyToOne(targetEntity="Driver")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      *
      */
     private $driver;

@@ -56,13 +56,7 @@ class Driver
 
 
     private $Marque;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="rayon", type="integer")
-     */
-    private $rayon;
+    
 
     /**
      * @var string
@@ -78,6 +72,8 @@ class Driver
      */
     private $noteMoyenne;
 
+
+    
 
     
 
@@ -113,30 +109,6 @@ class Driver
     public function getPlace()
     {
         return $this->place;
-    }
-
-    /**
-     * Set rayon
-     *
-     * @param integer $rayon
-     *
-     * @return Driver
-     */
-    public function setRayon($rayon)
-    {
-        $this->rayon = $rayon;
-
-        return $this;
-    }
-
-    /**
-     * Get rayon
-     *
-     * @return integer
-     */
-    public function getRayon()
-    {
-        return $this->rayon;
     }
 
     /**

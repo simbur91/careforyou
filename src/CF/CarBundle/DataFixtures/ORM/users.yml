@@ -5,7 +5,7 @@ CF\CarBundle\Entity\Users:
         email:  <email()>
         emailsecu:  <safeEmail()>
         tel:  <phoneNumber()>
-        birthdate:  <date($format = 'Y-m-d', $max = 'now')>
+        birthdate:  <date($format = 'Y-m-d', $max = '1998-01-01')>
         password:  <password()>
         admin:  <boolean()>
         langage:  <languageCode()>

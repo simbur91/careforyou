@@ -43,18 +43,13 @@ class Message
     private $content;
 
     /**
-     * @var int
      * @ORM\ManyToOne(targetEntity="Users",inversedBy="message")
-     * @ORM\JoinColumn(name="recipient_id", referencedColumnName="id")
-     * @ORM\Column(name="recipient_id", type="integer")
      */
     private $recipientId;
 
     /**
-     * @var int
+     
      * @ORM\ManyToOne(targetEntity="Users",inversedBy="messagesend")
-     * @ORM\JoinColumn(name="sender_id", referencedColumnName="id")
-     * @ORM\Column(name="sender_id", type="integer")
      */
     private $senderId;
 

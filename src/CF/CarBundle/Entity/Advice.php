@@ -24,6 +24,7 @@ class Advice
     /**
      *
      * @ORM\OneToOne(targetEntity="Users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      *
      */
     private $User;
@@ -31,6 +32,7 @@ class Advice
     /**
      *
      * @ORM\OneToOne(targetEntity="Driver")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      *
      */
     private $driver;

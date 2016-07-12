@@ -1,0 +1,8 @@
+CF\CarBundle\Entity\Coordonnees:
+    coordonnees_{1..150}:
+         users: ["@users_*"]
+         adressStreet:  <streetName()>
+         adressNum: <randomDigitNotNull()>
+         adressBox: <randomLetter()>
+         adressZip: <postcode()>
+         adressCountry: <country()>

@@ -93,14 +93,17 @@ class Users
   
     /**
      * @ORM\OneToOne(targetEntity="Coordonnees",mappedBy="users")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $coordonnees;
     /**
      * @ORM\OneToMany(targetEntity="Message",mappedBy="senderId")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $message;
     /**
      * @ORM\OneToMany(targetEntity="Message",mappedBy="recipientId")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $messagesend;
 

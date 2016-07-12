@@ -22,10 +22,7 @@ class Coordonnees
     private $id;
 
     /**
-
      * @ORM\OneToMany(targetEntity="Users",mappedBy="coordonnees")
-
-
      */
     private $users;
 

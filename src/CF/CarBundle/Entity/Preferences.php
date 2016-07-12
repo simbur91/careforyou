@@ -71,16 +71,16 @@ class Preferences
     private $rayon;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="horaire_aller", type="datetime")
+     * @ORM\Column(name="horaire_aller", type="string", length=200)
      */
     private $horaireAller;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="horaire_retour", type="datetime")
+     * @ORM\Column(name="horaire_retour", type="string", length=200)
      */
     private $horaireRetour;
 

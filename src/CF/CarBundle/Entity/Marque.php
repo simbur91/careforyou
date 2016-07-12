@@ -30,6 +30,7 @@ class Marque
   
     /**
      * @ORM\OneToMany(targetEntity="Modele", mappedBy="marque")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $modele;
 

@@ -37,6 +37,7 @@ class Sponsors
 
     /**
      * @ORM\OneToMany(targetEntity="Competition",mappedBy="sponsors")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $competition;
 

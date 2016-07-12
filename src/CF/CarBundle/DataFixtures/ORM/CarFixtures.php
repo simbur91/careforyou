@@ -16,54 +16,26 @@ class CarFixtures extends AbstractLoader
             __DIR__ . '/marque.yml',
             __DIR__ . '/modele.yml',
             __DIR__ . '/drivers.yml',
-            __DIR__ . '/comments.yml',
             __DIR__ . '/travel.yml',
+            __DIR__ . '/comments.yml',
+//            __DIR__ . '/commande.yml',
+            __DIR__ . '/competition.yml',
+            __DIR__ . '/coordonnees.yml',
+//            __DIR__ . '/info_banq.yml',
+            __DIR__ . '/message.yml',
+            __DIR__ . '/preferences.yml',
+            __DIR__ . '/sponsors.yml',
+            
         );
     }
-    public function marque(){
+    public function statut(){
 
        $genera=[
-           'Abarth',
-           'Alfa Romeo',
-           'Aston Martin',
-           'Audi',
-           'Bentley',
-           'BMW',
-           'Chevrolet',
-           'Citroen',
-           'Dacia',
-           'DS',
-           'Ferrari',
-           'Fiat',
-           'Ford',
-           'Honda',
-           'Hyundai',
-           'Infiniti',
-           'Jaguar',
-           'Jeep',
-           'Kia',
-           'Lada',
-           'Lamborghini',
-           'Lancia',
-           'Land Rover',
-           'Lexus',
-           'Lotus',
-           'Maserati',
-           'Mazda',
-           'Mclaren',
-           'Mercedes-Benz',
-           'Mini',
-           'Mitsubishi',
-           'Nissan',
-           'Opel',
-           'Peugeot',
-           'Porsche',
-           'Renault',
-           'Rolls Royce'
+            'Payé',
+           'En attente de payement'
 
        ];
     $key=array_rand($genera);
-    $key=array_unique($key);
         return $genera[$key];
 
     }
