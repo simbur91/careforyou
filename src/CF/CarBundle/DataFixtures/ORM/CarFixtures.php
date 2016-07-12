@@ -18,7 +18,7 @@ class CarFixtures extends AbstractLoader
             __DIR__ . '/drivers.yml',
             __DIR__ . '/travel.yml',
             __DIR__ . '/comments.yml',
-//            __DIR__ . '/commande.yml',
+            __DIR__ . '/commande.yml',
             __DIR__ . '/competition.yml',
             __DIR__ . '/coordonnees.yml',
 //            __DIR__ . '/info_banq.yml',

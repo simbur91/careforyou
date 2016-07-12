@@ -7,8 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Commande
  *
- * @ORM\Table(name="commande")
+ * @ORM\Table(name="commande", uniqueConstraints={@ORM\UniqueConstraint(name="trajet_unique", columns={"trajet_id", "users_id"})}))
  * @ORM\Entity(repositoryClass="CF\CarBundle\Repository\CommandeRepository")
+ * 
+ * 
  */
 class Commande
 {
@@ -22,7 +24,7 @@ class Commande
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Travel")
+     * @ORM\ManyToOne(targetEntity="Travel")
      * @ORM\JoinColumn(onDelete="CASCADE")
      * 
      * 
@@ -31,7 +33,7 @@ class Commande
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="Users")
+     * @ORM\ManyToOne(targetEntity="Users")
      * @ORM\JoinColumn(onDelete="CASCADE")
      * 
      *
