@@ -71,10 +71,13 @@ class Driver
      * @ORM\Column(name="note_moyenne", type="integer")
      */
     private $noteMoyenne;
+
     
     private  $preferences;
 
 
+
+    
 
     /**
      * Get id
@@ -228,5 +231,29 @@ class Driver
     public function getMarque()
     {
         return $this->Marque;
+    }
+
+    /**
+     * Set preferences
+     *
+     * @param \CF\CarBundle\Entity\Preferences $preferences
+     *
+     * @return Driver
+     */
+    public function setPreferences(\CF\CarBundle\Entity\Preferences $preferences = null)
+    {
+        $this->preferences = $preferences;
+
+        return $this;
+    }
+
+    /**
+     * Get preferences
+     *
+     * @return \CF\CarBundle\Entity\Preferences
+     */
+    public function getPreferences()
+    {
+        return $this->preferences;
     }
 }

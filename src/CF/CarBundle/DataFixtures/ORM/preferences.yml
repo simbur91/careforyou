@@ -1,6 +1,6 @@
 CF\CarBundle\Entity\Preferences:
     preferences_{1..50}:
-        driver (unique): "@driver_*"
+        driver: ["@driver_*"]
         animal: <boolean()>
         smoker: <boolean()>
         talker: <boolean()>
