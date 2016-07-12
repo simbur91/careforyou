@@ -11,9 +11,8 @@
 </head>
 <body>
     <header>
-        <div class="container center-block">
+        <div class="container">
             <div class="_top">
-                <img src="{{asset('images/logo.png')}}" class="logo img-responsive"/>
                 <img src="{{asset('images/banner.png')}}" class="banner img-responsive"/>
                 <h1 class="main-title">ar for You</h1>
             </div>
@@ -29,7 +28,7 @@
                     <div class="collapse navbar-collapse navHeaderCollapse">
                         <nav class="nav navbar-default">
                             {{ knp_menu_render('CFCarBundle:Builder:mainMenu') }}
-                            <div class="navbar-right">
+                            <div class="navbar-left">
                                 <a href="#"><i class="fa fa-facebook fa-2x social"></i></a>
                                 <a href="#"><i class="fa fa-twitter fa-2x social"></i></a>
                                 <a href="#"><i class="fa fa-google-plus fa-2x social"></i></a>
@@ -55,7 +54,7 @@
 </main>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <footer class="footer">
+    <footer class="footer container">
         <div class="container">
             <p class="text-center">Copyright Carforyou 2016 - Toute reproduction, en tout ou en partie, sous quelque forme que ce soit, est interdite sans l'autorisation préalable de l'auteur.  </p>
         </div>

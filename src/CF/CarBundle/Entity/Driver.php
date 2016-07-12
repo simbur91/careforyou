@@ -71,11 +71,10 @@ class Driver
      * @ORM\Column(name="note_moyenne", type="integer")
      */
     private $noteMoyenne;
-
-
     
+    private  $preferences;
 
-    
+
 
     /**
      * Get id
