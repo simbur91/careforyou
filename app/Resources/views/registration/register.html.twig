@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+<fieldset class="form-group">
+    <legend class="text-center">Enregistrement Utilisateur</legend>
+    {{ form_start(form, {'attr': {'class': 'register-form'} }) }}
+        {{ form_row(form.login, {'attr': {'class': 'form-control'} }) }}
+        {{ form_row(form.password.first, {'attr': {'class': 'form-control'} }) }}
+        {{ form_row(form.password.second, {'attr': {'class': 'form-control'} }) }}
+        {{ form_row(form.tel, {'attr': {'class': 'form-control '} }) }}
+        {{ form_row(form.email, {'attr': {'class': 'form-control '} }) }}
+        {{ form_row(form.birthdate, {'attr': {'class': 'form-control '} }) }}
+        {{ form_row(form.langage, {'attr': {'class': 'form-control '} }) }}
+        {{ form_row(form.sexe, {'attr': {'class': 'form-control '} }) }}
+    <div class="text-center">
+        <div class="form-group">
+            <button type="submit" name="submit" class= "btn btn-success">Envoyer</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+</fieldset>
+    </div>
+{% endblock %}

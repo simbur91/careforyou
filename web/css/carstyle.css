@@ -1,18 +1,15 @@
-header img.logo {
-	position: absolute;
-	top: 47px;
-	left: 410px;
+.container{
+	max-width:1024px;
+	padding:0;
 }
 header img.banner{
-	position: absolute;
-	top: 0px;
-	left: 28%;
+	width:100%;
 }
 header h1.main-title {
 	position: absolute;
-	top: 33px;
-	left: 550px;
-	font-size: 60px;
+	top: 30px;
+	left: 21.5%;
+	font-size: 400%;
 }
 h1{
 	padding: 0;
@@ -25,22 +22,22 @@ h1{
 	height: 100px;
 	background-color: #f8f8f8;
 	color: cornflowerblue;
-	position: absolute;
 	bottom: 0;
 	width: 100%;
-	padding-top:10px;
-	padding-bottom:10px;
+	max-width:1024px;
+	padding-top:1%;
+	padding-bottom:1%;
 }
 .navbar-default ul li{
-	padding: 10px 0px;
+	padding: 1% 0;
 }
 .social {
-	padding: 20px 20px;
+	padding: 2% 1%;
 }
-._topsearch {
-	padding: 10px 40px;
+.navbar-left{
+	width:50%;
 }
 .connexion {
-	margin-top: 50px;
-	width: 250px;
+	margin-top: 2%;
+	width: 15%;
 }

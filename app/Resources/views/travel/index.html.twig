@@ -22,14 +22,14 @@
         {% for travel in travels %}
             <tr>
                 <td><a href="{{ path('travel_show', { 'id': travel.id }) }}">{{ travel.id }}</a></td>
-               <td>{{ travel.driverId.id }}</td>
+               <td>{{ travel.driver }}</td>
                 <td>{{ travel.cityDeparture }}</td>
                 <td>{{ travel.cityFinish }}</td>
                 <td>{{ travel.placeFree }}</td>
                 <td>{{ travel.price }}</td>
                 <td>{{ travel.distance }}</td>
                 <td>{{ travel.itinary }}</td>
-                <td>{{ travel.usersId }}</td>
+                <td>{{ travel.users }}</td>
                 <td>
                     <ul>
                         <li>

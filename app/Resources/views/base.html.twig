@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" />
-            <link rel='stylesheet' href="{{ asset('/css/style.css') }}">
-
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-    <main class="container-full">
-        <header>
-            {{ knp_menu_render('CFCarBundle:Builder:mainMenu') }}
-            <section class="banner">
-                <img src="{{asset('images/banner.png')}}"/>
-            </section>
-
-            <h1>ar for You</h1>
-            <aside>
-                <ul class="social-link">
-                    <li><a href="#"><img src="{{asset('images/facebook.png')}}"/></a></li>
-                    <li><a href="#"><img src="{{asset('images/twitter.png')}}"/></a></li>
-                    <li><a href="#"><img src="{{asset('images/instagram.png')}}"/></a></li>
-                    <li><a href="#"><img src="{{asset('images/google-plus.png')}}"/></a></li>
-                </ul>
-                <form>
-                    <input type="search" name="search">
-                    <input type="submit" value="rechercher">
-                </form>
-            </aside>
-        </header>
-        {% block section %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </main>
-    </body>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    {% block head %}
+        {#<link rel="stylesheet" href="{{asset('bundles/framework/css/style.css')}}" />#}
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}">
+        <link rel="stylesheet" href="{{asset('css/carstyle.css')}}">
+        <title>{% block title %}{% endblock %} - CarforYou</title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="_top">
+                <img src="{{asset('images/banner.png')}}" class="banner img-responsive"/>
+                <h1 class="main-title">ar for You</h1>
+            </div>
+            <nav class="navbar navbar-nav" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <nav class="nav navbar-default">
+                            {{ knp_menu_render('CFCarBundle:Builder:mainMenu') }}
+                            <div class="navbar-left">
+                                <a href="#"><i class="fa fa-facebook fa-2x social"></i></a>
+                                <a href="#"><i class="fa fa-twitter fa-2x social"></i></a>
+                                <a href="#"><i class="fa fa-google-plus fa-2x social"></i></a>
+                                <a href="#"><i class="fa fa-instagram fa-2x social"></i></a>
+                                <form class="navbar-form navbar-right _topsearch" role="search">
+                                    <div class="form-group">
+                                        <label for ="search"><input type="text" class="form-control" placeholder="Rechercher..."/></label>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Envoyer</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+<main class="container">
+    <div class="container text-center">
+    {% block body %}
+    {% endblock %}
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <footer class="footer container">
+        <div class="container">
+            <p class="text-center">Copyright Carforyou 2016 - Toute reproduction, en tout ou en partie, sous quelque forme que ce soit, est interdite sans l'autorisation préalable de l'auteur.  </p>
+        </div>
+    </footer>
+</body>
 </html>
-

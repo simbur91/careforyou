@@ -90,11 +90,7 @@ class Users
      * @ORM\Column(name="sexe", type="string", length=10)
      */
     private $sexe;
-  
-    /**
-     * @ORM\OneToOne(targetEntity="Coordonnees",mappedBy="users")
-     * @ORM\JoinColumn(onDelete="CASCADE")
-     */
+    
     private $coordonnees;
     /**
      * @ORM\OneToMany(targetEntity="Message",mappedBy="senderId")
@@ -114,6 +110,7 @@ class Users
     private $login;
 
    
+    
     /**
      * Constructor
      */
@@ -395,30 +392,6 @@ class Users
     public function getLogin()
     {
         return $this->login;
-    }
-
-    /**
-     * Set coordonnees
-     *
-     * @param \CF\CarBundle\Entity\Coordonnees $coordonnees
-     *
-     * @return Users
-     */
-    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
-    {
-        $this->coordonnees = $coordonnees;
-
-        return $this;
-    }
-
-    /**
-     * Get coordonnees
-     *
-     * @return \CF\CarBundle\Entity\Coordonnees
-     */
-    public function getCoordonnees()
-    {
-        return $this->coordonnees;
     }
 
     /**

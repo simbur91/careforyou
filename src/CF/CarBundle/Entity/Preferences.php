@@ -23,7 +23,7 @@ class Preferences
 
     /**
      *
-     * @ORM\OneToOne(targetEntity="Driver")
+     * @ORM\OneToOne(targetEntity="Driver",inversedBy="preferences")
      *
      */
     private $driver;
