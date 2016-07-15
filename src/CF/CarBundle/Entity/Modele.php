@@ -32,10 +32,21 @@ class Modele
      * @ORM\ManyToOne(targetEntity="Marque",inversedBy="modele")
      */
     private $marque;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Driver",mappedBy="modele")
+     */
+    private $driver;
     
 
 
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -96,23 +107,33 @@ class Modele
     }
 
     /**
-     * Set driver
+     * Add driver
      *
      * @param \CF\CarBundle\Entity\Driver $driver
      *
      * @return Modele
      */
-    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
+    public function addDriver(\CF\CarBundle\Entity\Driver $driver)
     {
-        $this->driver = $driver;
+        $this->driver[] = $driver;
 
         return $this;
     }
 
     /**
+     * Remove driver
+     *
+     * @param \CF\CarBundle\Entity\Driver $driver
+     */
+    public function removeDriver(\CF\CarBundle\Entity\Driver $driver)
+    {
+        $this->driver->removeElement($driver);
+    }
+
+    /**
      * Get driver
      *
-     * @return \CF\CarBundle\Entity\Driver
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDriver()
     {

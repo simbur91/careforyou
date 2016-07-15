@@ -4,7 +4,7 @@ cf_car_homepage:
 
 cf_car_travel:
     path:     /travel
-    defaults: { _controller: CFCarBundle:Travel:trajet }
+    defaults: { _controller: CFCarBundle:Travel:index }
 
 cf_car_competition:
     path:    /competition

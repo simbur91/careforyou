@@ -8,3 +8,4 @@ CF\CarBundle\Entity\Travel:
         distance: <numberBetween($min=10, $max=100)
         itinary:  <imageUrl($width = 640, $height = 480)>
         users:  "3x @users_*"
+        preferences:  "@preferences_*"

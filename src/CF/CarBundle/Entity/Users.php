@@ -90,15 +90,18 @@ class Users
      * @ORM\Column(name="sexe", type="string", length=10)
      */
     private $sexe;
-    
+
+    /**
+     * * @ORM\ManyToOne(targetEntity="Coordonnees",inversedBy="users")
+     */
     private $coordonnees;
     /**
-     * @ORM\OneToMany(targetEntity="Message",mappedBy="senderId")
+     * @ORM\OneToMany(targetEntity="Message",mappedBy="recipientId")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $message;
     /**
-     * @ORM\OneToMany(targetEntity="Message",mappedBy="recipientId")
+     * @ORM\OneToMany(targetEntity="Message",mappedBy="senderId")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $messagesend;
@@ -460,5 +463,29 @@ class Users
     public function getMessagesend()
     {
         return $this->messagesend;
+    }
+
+    /**
+     * Set coordonnees
+     *
+     * @param \CF\CarBundle\Entity\Coordonnees $coordonnees
+     *
+     * @return Users
+     */
+    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
+    {
+        $this->coordonnees = $coordonnees;
+
+        return $this;
+    }
+
+    /**
+     * Get coordonnees
+     *
+     * @return \CF\CarBundle\Entity\Coordonnees
+     */
+    public function getCoordonnees()
+    {
+        return $this->coordonnees;
     }
 }

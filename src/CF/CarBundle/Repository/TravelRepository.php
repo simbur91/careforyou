@@ -10,16 +10,14 @@ namespace CF\CarBundle\Repository;
  */
 class TravelRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function AllTravelByPrefAndDriver(){
-
-        $qb=$this->createQueryBuilder('t')
-            ->join('t.driver','driver')
-            ->join('driver.User','user')
-            ->join('driver.preferences','preferences')
-            ->addSelect('driver')
-            ->addSelect('user')
-            ->addSelect('preferences');
-
-        return $qb->getQuery()->getResult();
-    }
+//    public function AllTravelByPrefAndDriver(){
+//
+//        $qb=$this->createQueryBuilder('t')
+//            ->join('t.driver','driver')
+//            ->join('driver.User','user')
+//            ->addSelect('driver')
+//            ->addSelect('user');
+//
+//        return $qb->getQuery()->getResult();
+//    }
 }

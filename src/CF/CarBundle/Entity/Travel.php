@@ -76,9 +76,11 @@ class Travel
      * @ORM\ManyToMany(targetEntity="Users")
      */
     private $users;
+    /**
+     * @ORM\ManyToOne(targetEntity="Preferences",inversedBy="travel")
+     */
+    private  $preferences;
 
-
-  
     /**
      * Constructor
      */
@@ -297,5 +299,29 @@ class Travel
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Set preferences
+     *
+     * @param \CF\CarBundle\Entity\Preferences $preferences
+     *
+     * @return Travel
+     */
+    public function setPreferences(\CF\CarBundle\Entity\Preferences $preferences = null)
+    {
+        $this->preferences = $preferences;
+
+        return $this;
+    }
+
+    /**
+     * Get preferences
+     *
+     * @return \CF\CarBundle\Entity\Preferences
+     */
+    public function getPreferences()
+    {
+        return $this->preferences;
     }
 }

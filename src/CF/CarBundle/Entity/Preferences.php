@@ -23,10 +23,10 @@ class Preferences
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="Driver",mappedBy="preferences")
+     * @ORM\OneToMany(targetEntity="Travel",mappedBy="preferences")
      *
      */
-    private $driver;
+    private $travel;
 
     /**
      * @var bool
@@ -93,6 +93,14 @@ class Preferences
 
 
    
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->travel = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -251,7 +259,7 @@ class Preferences
     /**
      * Set horaireAller
      *
-     * @param \DateTime $horaireAller
+     * @param string $horaireAller
      *
      * @return Preferences
      */
@@ -265,7 +273,7 @@ class Preferences
     /**
      * Get horaireAller
      *
-     * @return \DateTime
+     * @return string
      */
     public function getHoraireAller()
     {
@@ -275,7 +283,7 @@ class Preferences
     /**
      * Set horaireRetour
      *
-     * @param \DateTime $horaireRetour
+     * @param string $horaireRetour
      *
      * @return Preferences
      */
@@ -289,7 +297,7 @@ class Preferences
     /**
      * Get horaireRetour
      *
-     * @return \DateTime
+     * @return string
      */
     public function getHoraireRetour()
     {
@@ -321,57 +329,36 @@ class Preferences
     }
 
     /**
-     * Set driver
+     * Add travel
      *
-     * @param \CF\CarBundle\Entity\Driver $driver
+     * @param \CF\CarBundle\Entity\Travel $travel
      *
      * @return Preferences
      */
-    public function setDriver(\CF\CarBundle\Entity\Driver $driver = null)
+    public function addTravel(\CF\CarBundle\Entity\Travel $travel)
     {
-        $this->driver = $driver;
+        $this->travel[] = $travel;
 
         return $this;
     }
 
     /**
-     * Get driver
+     * Remove travel
      *
-     * @return \CF\CarBundle\Entity\Driver
+     * @param \CF\CarBundle\Entity\Travel $travel
      */
-    public function getDriver()
+    public function removeTravel(\CF\CarBundle\Entity\Travel $travel)
     {
-        return $this->driver;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->driver = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->travel->removeElement($travel);
     }
 
     /**
-     * Add driver
+     * Get travel
      *
-     * @param \CF\CarBundle\Entity\Driver $driver
-     *
-     * @return Preferences
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function addDriver(\CF\CarBundle\Entity\Driver $driver)
+    public function getTravel()
     {
-        $this->driver[] = $driver;
-
-        return $this;
-    }
-
-    /**
-     * Remove driver
-     *
-     * @param \CF\CarBundle\Entity\Driver $driver
-     */
-    public function removeDriver(\CF\CarBundle\Entity\Driver $driver)
-    {
-        $this->driver->removeElement($driver);
+        return $this->travel;
     }
 }

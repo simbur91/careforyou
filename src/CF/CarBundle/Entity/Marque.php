@@ -33,6 +33,10 @@ class Marque
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $modele;
+    /**
+     * @ORM\OneToMany(targetEntity="Driver",mappedBy="marque")
+     */
+    private $driver;
 
 
     /**

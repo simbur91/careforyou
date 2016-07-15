@@ -30,32 +30,26 @@ class Driver
     private $place;
 
     /**
-
      * @ORM\ManyToOne(targetEntity="Modele",inversedBy="driver")
-     * @ORM\JoinColumn(name="modele_id", referencedColumnName="id")
-
+     *
      */
     private $modele;
 
     /**
      *
-     *
-     * @ORM\OneToOne(targetEntity="Users")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Marque", inversedBy="driver")
      *
      */
-
-
-    private $User;
+    private $marque;
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="Marque",inversedBy="driver")
+     *
+     * @ORM\OneToOne(targetEntity="Users")
      *
      */
+    private $user;
 
-
-    private $Marque;
     
 
     /**
@@ -72,12 +66,8 @@ class Driver
      */
     private $noteMoyenne;
 
-    
-    private  $preferences;
+   
 
-
-
-    
 
     /**
      * Get id
@@ -186,30 +176,6 @@ class Driver
     }
 
     /**
-     * Set user
-     *
-     * @param \CF\CarBundle\Entity\Users $user
-     *
-     * @return Driver
-     */
-    public function setUser(\CF\CarBundle\Entity\Users $user = null)
-    {
-        $this->User = $user;
-
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \CF\CarBundle\Entity\Users
-     */
-    public function getUser()
-    {
-        return $this->User;
-    }
-
-    /**
      * Set marque
      *
      * @param \CF\CarBundle\Entity\Marque $marque
@@ -218,7 +184,7 @@ class Driver
      */
     public function setMarque(\CF\CarBundle\Entity\Marque $marque = null)
     {
-        $this->Marque = $marque;
+        $this->marque = $marque;
 
         return $this;
     }
@@ -230,30 +196,30 @@ class Driver
      */
     public function getMarque()
     {
-        return $this->Marque;
+        return $this->marque;
     }
 
     /**
-     * Set preferences
+     * Set user
      *
-     * @param \CF\CarBundle\Entity\Preferences $preferences
+     * @param \CF\CarBundle\Entity\Users $user
      *
      * @return Driver
      */
-    public function setPreferences(\CF\CarBundle\Entity\Preferences $preferences = null)
+    public function setUser(\CF\CarBundle\Entity\Users $user = null)
     {
-        $this->preferences = $preferences;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get preferences
+     * Get user
      *
-     * @return \CF\CarBundle\Entity\Preferences
+     * @return \CF\CarBundle\Entity\Users
      */
-    public function getPreferences()
+    public function getUser()
     {
-        return $this->preferences;
+        return $this->user;
     }
 }
