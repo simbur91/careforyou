@@ -18,7 +18,7 @@ public function registerAction(Request $request)
 {
 // 1) build the form
 $user = new Users();
-$form = $this->createForm(UsersType::class, $user);
+$form = $this->createForm(RegisterType::class, $user);
 
 // 2) handle the submit (will only happen on POST)
 $form->handleRequest($request);

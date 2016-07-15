@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
+
 class UsersType extends AbstractType
 {
     /**
@@ -15,12 +17,8 @@ class UsersType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname')
-            ->add('lastname')
-            ->add('email')
-            ->add('emailsecu')
             ->add('tel')
-            ->add('birthdate', 'date')
+            ->add('birthdate')
             ->add('password')
             ->add('admin')
             ->add('langage')
@@ -28,6 +26,9 @@ class UsersType extends AbstractType
             ->add('driver')
             ->add('preferencesId')
             ->add('coordonnees')
+            ->add('firstname')
+            ->add('lastname')
+            ->add('login')
         ;
     }
     
@@ -40,4 +41,5 @@ class UsersType extends AbstractType
             'data_class' => 'CF\CarBundle\Entity\Users'
         ));
     }
+
 }

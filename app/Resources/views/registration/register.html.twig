@@ -5,14 +5,48 @@
 <fieldset class="form-group">
     <legend class="text-center">Enregistrement Utilisateur</legend>
     {{ form_start(form, {'attr': {'class': 'register-form'} }) }}
-        {{ form_row(form.login, {'attr': {'class': 'form-control'} }) }}
-        {{ form_row(form.password.first, {'attr': {'class': 'form-control'} }) }}
-        {{ form_row(form.password.second, {'attr': {'class': 'form-control'} }) }}
-        {{ form_row(form.tel, {'attr': {'class': 'form-control '} }) }}
-        {{ form_row(form.email, {'attr': {'class': 'form-control '} }) }}
-        {{ form_row(form.birthdate, {'attr': {'class': 'form-control '} }) }}
-        {{ form_row(form.langage, {'attr': {'class': 'form-control '} }) }}
-        {{ form_row(form.sexe, {'attr': {'class': 'form-control '} }) }}
+        <div class="form-group input-group input-login">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            {{ form_widget(form.login, {'attr': {'class': 'form-control','placeholder':'Login'} }) }}
+        </div>
+
+        <div class="form-group input-group input-password">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            {{ form_widget(form.password.first, {'attr': {'class': 'form-control','placeholder':'Mot de Passe'} }) }}
+        </div>
+
+        <div class="form-group input-group input-password">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            {{ form_widget(form.password.second, {'attr': {'class': 'form-control','placeholder':'Répéter Mot de Passe'} }) }}
+        </div>
+
+        <div class="form-group input-group input-tel">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+            {{ form_widget(form.tel, {'attr': {'class': 'form-control ','placeholder':'Téléphone'} }) }}
+        </div>
+
+        <div class="form-group input-group input-email">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            {{ form_widget(form.email, {'attr': {'class': 'form-control','placeholder':'Email'} }) }}
+        </div>
+
+        <div class="form-group input-group input-birthdate date datepicker-user" data-provide="datepicker">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            {{ form_widget(form.birthdate, {'attr': {'class': 'form-control','placeholder': 'Date de Naissance'} }) }}
+        </div>
+
+        <div class="form-group input-group input-langage">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></span>
+            {{ form_widget(form.langage, {'attr': {'class': 'form-control '} }) }}
+        </div>
+
+       <div class="form-group input-group">
+           <span class="input-group-addon"><i class="fa fa-male fa-3x"></i></span>
+           {{ form_widget(form.sexe, {'attr': {'class': 'form-control','value':'Homme'} }) }}
+           <span class="input-group-addon"><i class="fa fa-female fa-3x"></i></span>
+           {{ form_widget(form.sexe, {'attr': {'class': 'form-control','value':'Femme'} }) }}
+       </div>
+
     <div class="text-center">
         <div class="form-group">
             <button type="submit" name="submit" class= "btn btn-success">Envoyer</button>

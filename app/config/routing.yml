@@ -98,6 +98,10 @@ cf_car_driver:
     resource: "@CFCarBundle/Controller/DriverController.php"
     type:     annotation
 
+cf_car_register:
+    resource: "@CFCarBundle/Controller/RegistrationController.php"
+    type:     annotation
+
 cf_car_login:
     resource: "@CFCarBundle/Controller/SecurityController.php"
     type:     annotation

@@ -2,5 +2,18 @@ cf_car_homepage:
     path:     /
     defaults: { _controller: CFCarBundle:Default:index }
 
+cf_car_travel:
+    path:    /travel
+    defaults: { _controller: CFCarBundle:Travel:trajet }
 
+cf_car_competition:
+    path:     /competition
+    defaults: { _controller: CFCarBundle:Competition:index }
 
+cf_car_login:
+    path:     /login
+    defaults: { _controller: CFCarBundle:Security:login }
+
+cf_car_register:
+    path:     /register
+    defaults: { _controller: CFCarBundle:Registration:register }

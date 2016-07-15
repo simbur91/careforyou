@@ -107,9 +107,9 @@ class Users
      * @var string
      * @ORM\Column(name="login", type="string", length=255)
      */
-    private $login;
+    public $login;
 
-   
+
     
     /**
      * Constructor

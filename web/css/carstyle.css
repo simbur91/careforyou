@@ -1,6 +1,6 @@
-.container{
-	max-width:1024px;
-	padding:0;
+.container {
+	max-width: 1024px;
+	padding: 0;
 }
 header img.banner{
 	width:100%;
@@ -18,15 +18,20 @@ h1{
 ._top {
 	height: 220px;
 }
+main > .container {
+    margin-bottom: 70px;
+}
 .footer {
-	height: 100px;
+	height: 50px;
 	background-color: #f8f8f8;
 	color: cornflowerblue;
 	bottom: 0;
 	width: 100%;
-	max-width:1024px;
-	padding-top:1%;
-	padding-bottom:1%;
+	/*max-width:1024px;*/
+	/*padding-top:1%;
+	padding-bottom:1%;*/
+	position: fixed;
+	z-index: 500;
 }
 .navbar-default ul li{
 	padding: 1% 0;
@@ -40,4 +45,21 @@ h1{
 .connexion {
 	margin-top: 2%;
 	width: 15%;
+}
+.register-form {
+	width: 300px;
+	margin: 0 auto;
+}
+.form-control {
+}
+.form-group {
+	margin: 10px 0px;
+}
+#register_sexe >input:nth-child(1),
+#register_sexe >label:nth-child(2){
+	float: left;
+}
+#register_sexe >input:nth-child(3),
+#register_sexe >label:nth-child(4){
+	float: right;
 }
