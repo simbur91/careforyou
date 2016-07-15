@@ -50,12 +50,13 @@ class Info_Banq
     private $institution;
 
     /**
-     * @ORM\OneToOne(targetEntity="Users")
+     * @ORM\ManyToOne(targetEntity="Users",inversedBy="infobanq")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $user;
 
     
+
 
     /**
      * Get id

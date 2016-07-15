@@ -4,4 +4,4 @@ CF\CarBundle\Entity\Info_Banq:
            statut:  <statut()>
            bic: <swiftBicNumber()>
            institution: <word()>
-           user (unique):  "@users_*"
+#           user (unique):  "@users_*"

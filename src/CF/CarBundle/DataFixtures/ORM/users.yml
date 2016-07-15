@@ -2,6 +2,7 @@ CF\CarBundle\Entity\Users:
     users_{1..200}:
         firstname:  <firstname()>
         lastname: <lastname()>
+        coordonnees:  "@coordonnees_*"
         email:  <email()>
         emailsecu:  <safeEmail()>
         tel:  <phoneNumber()>

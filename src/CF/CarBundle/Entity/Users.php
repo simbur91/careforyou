@@ -112,6 +112,11 @@ class Users
      */
     private $login;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Info_Banq",mappedBy="user")
+     */
+    private $infobanq;
+
    
     
     /**
@@ -121,6 +126,7 @@ class Users
     {
         $this->message = new \Doctrine\Common\Collections\ArrayCollection();
         $this->messagesend = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->infobanq = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -398,6 +404,30 @@ class Users
     }
 
     /**
+     * Set coordonnees
+     *
+     * @param \CF\CarBundle\Entity\Coordonnees $coordonnees
+     *
+     * @return Users
+     */
+    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
+    {
+        $this->coordonnees = $coordonnees;
+
+        return $this;
+    }
+
+    /**
+     * Get coordonnees
+     *
+     * @return \CF\CarBundle\Entity\Coordonnees
+     */
+    public function getCoordonnees()
+    {
+        return $this->coordonnees;
+    }
+
+    /**
      * Add message
      *
      * @param \CF\CarBundle\Entity\Message $message
@@ -466,26 +496,36 @@ class Users
     }
 
     /**
-     * Set coordonnees
+     * Add infobanq
      *
-     * @param \CF\CarBundle\Entity\Coordonnees $coordonnees
+     * @param \CF\CarBundle\Entity\Info_Banq $infobanq
      *
      * @return Users
      */
-    public function setCoordonnees(\CF\CarBundle\Entity\Coordonnees $coordonnees = null)
+    public function addInfobanq(\CF\CarBundle\Entity\Info_Banq $infobanq)
     {
-        $this->coordonnees = $coordonnees;
+        $this->infobanq[] = $infobanq;
 
         return $this;
     }
 
     /**
-     * Get coordonnees
+     * Remove infobanq
      *
-     * @return \CF\CarBundle\Entity\Coordonnees
+     * @param \CF\CarBundle\Entity\Info_Banq $infobanq
      */
-    public function getCoordonnees()
+    public function removeInfobanq(\CF\CarBundle\Entity\Info_Banq $infobanq)
     {
-        return $this->coordonnees;
+        $this->infobanq->removeElement($infobanq);
+    }
+
+    /**
+     * Get infobanq
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInfobanq()
+    {
+        return $this->infobanq;
     }
 }
